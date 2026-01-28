@@ -8,7 +8,7 @@ import { Course } from '../models/course.model';
 export class CartService {
   private items: CartItem[] = [];
 
-  addToPanier(course: Course, quantity: number = 1) {
+  addToCart(course: Course, quantity: number = 1) {
     // Logique pour ajouter au panier
   }
 
