@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { CartItem } from '../models/cart-item.model';
 import { Course } from '../models/course.model';
 
@@ -7,6 +8,8 @@ import { Course } from '../models/course.model';
 })
 export class CartService {
   private items: CartItem[] = [];
+  private panierSubject = new BehaviorSubject<CartItem[]>([]);
+  panier$ = this.panierSubject.asObservable();
 
   addToCart(course: Course, quantity: number = 1) {
     // Logique pour ajouter au panier
