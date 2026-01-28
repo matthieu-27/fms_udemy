@@ -1,0 +1,13 @@
+.course-card {
+  border-left: 4px solid #8b5cf6;
+  transition: all 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  border-left-color: #7c3aed;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
