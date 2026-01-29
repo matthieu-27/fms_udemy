@@ -1,6 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Course as CourseModel } from '../models/course.model';
+import { CartService } from '../services/cart-service';
 
 @Component({
   selector: 'app-course',
@@ -11,9 +12,11 @@ import { Course as CourseModel } from '../models/course.model';
 export class Course {
   @Input() course!: CourseModel;
 
-  // Méthode placeholder pour ajouter au panier
+  constructor(private cartService: CartService) {}
+
+  // Méthode pour ajouter au panier
   addToCart() {
-    alert(`Cours "${this.course.name}" ajouté au panier (placeholder)`);
-    console.log('Cours ajouté au panier:', this.course);
+    this.cartService.addToCart(this.course);
+    alert(`Cours "${this.course.name}" ajouté au panier !`);
   }
 }
