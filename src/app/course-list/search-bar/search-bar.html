@@ -17,24 +17,37 @@
       </button>
     }
   </div>
-
-  <!-- Bouton pour ajouter toutes les formations filtrées au panier -->
-  <div>
-    @if (searchStr().length > 0 && filteredCourses.length > 0) {
-      <button
-        (click)="addAllToCart()"
-        class="mt-2 bg-white text-purple-700 px-4 py-2 rounded-lg hover:ring-1 hover:ring-purple-700 transition-colors duration-200 text-sm w-full"
-        title="Ajouter toutes les formations trouvées au panier"
-      >
-        Ajouter toutes les {{ filteredCourses.length }} formations au panier
-      </button>
-    }
-  </div>
   <div>
     <select
+      (change)="onCategoryChange($event)"
       class="px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
     >
-      <option value="all">Toutes les formations</option>
+      <option value="all">Toutes les catégories</option>
+      <option value="Développement Web">Développement Web</option>
+      <option value="Développement Mobile">Développement Mobile</option>
+      <option value="Data Science & IA">Data Science & IA</option>
+      <option value="Cloud & DevOps">Cloud & DevOps</option>
+      <option value="Langages de Programmation">Langages de Programmation</option>
+      <option value="Cybersécurité">Cybersécurité</option>
+      <option value="Bases de Données & Algorithmes">Bases de Données & Algorithmes</option>
+      <option value="Autres">Autres</option>
     </select>
+  </div>
+  <div>
+    <input
+      type="number"
+      (input)="onMaxPriceChange($event)"
+      placeholder="Prix max"
+      class="px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all w-32"
+    />
+  </div>
+  <div>
+    <button
+      (click)="addAllToCart()"
+      class="mt-2 bg-white text-purple-700 px-4 py-2 rounded-lg hover:ring-1 hover:ring-purple-700 transition-colors duration-200 text-sm w-full"
+      title="Ajouter toutes les formations trouvées au panier"
+    >
+      Ajouter toutes les formations filtrées au panier
+    </button>
   </div>
 </div>
