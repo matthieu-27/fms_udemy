@@ -10,10 +10,35 @@ export class CartService {
   private items: CartItem[] = [];
   private cartItemsSubject = new BehaviorSubject<CartItem[]>([]);
   cartItems$ = this.cartItemsSubject.asObservable();
+  private readonly CART_STORAGE_KEY = 'fms_udemy_cart';
 
   constructor() {
-    // Initialiser avec un tableau vide
-    this.cartItemsSubject.next(this.items);
+    // Charger le panier depuis le localStorage au démarrage
+    this.loadCartFromLocalStorage();
+  }
+
+  // Méthode pour charger le panier depuis le localStorage
+  private loadCartFromLocalStorage(): void {
+    const cartData = localStorage.getItem(this.CART_STORAGE_KEY);
+    if (cartData) {
+      try {
+        this.items = JSON.parse(cartData);
+        this.cartItemsSubject.next([...this.items]);
+      } catch (error) {
+        console.error('Erreur lors du chargement du panier depuis localStorage:', error);
+        this.items = [];
+        this.cartItemsSubject.next([...this.items]);
+      }
+    }
+  }
+
+  // Méthode pour sauvegarder le panier dans le localStorage
+  private saveCartToLocalStorage(): void {
+    try {
+      localStorage.setItem(this.CART_STORAGE_KEY, JSON.stringify(this.items));
+    } catch (error) {
+      console.error('Erreur lors de la sauvegarde du panier dans localStorage:', error);
+    }
   }
 
   addToCart(course: Course, quantity: number = 1) {
@@ -34,6 +59,9 @@ export class CartService {
 
     // Notifier les observateurs que le panier a changé
     this.cartItemsSubject.next([...this.items]);
+    
+    // Sauvegarder dans le localStorage
+    this.saveCartToLocalStorage();
   }
 
   removeFromCart(cartItem: CartItem) {
@@ -45,6 +73,9 @@ export class CartService {
       this.items.splice(index, 1);
       // Notifier les observateurs
       this.cartItemsSubject.next([...this.items]);
+      
+      // Sauvegarder dans le localStorage
+      this.saveCartToLocalStorage();
     }
   }
 
@@ -52,6 +83,9 @@ export class CartService {
     // Vider complètement le panier
     this.items = [];
     this.cartItemsSubject.next([...this.items]);
+    
+    // Sauvegarder dans le localStorage
+    this.saveCartToLocalStorage();
   }
 
   getCartItems(): CartItem[] {
