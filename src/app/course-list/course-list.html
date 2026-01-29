@@ -4,6 +4,7 @@
   <!-- Barre de recherche -->
   <app-search-bar 
     [searchStr]="searchStr()"
+    [filteredCourses]="filteredCourses()"
     (searchStrChange)="onSearchChange($event)"
   ></app-search-bar>
 
