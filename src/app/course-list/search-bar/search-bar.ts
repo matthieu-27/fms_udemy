@@ -13,8 +13,13 @@ import { CartService } from '../../services/cart-service';
 export class SearchBar {
   searchStr = model('');
   searchStrChange = output<string>();
-  
+
+  // todo : trouver le moyen d'utiliser un signal pour filteredCourses
   @Input() filteredCourses: Course[] = [];
+
+  // Nouveaux outputs pour les filtres
+  categoryChange = output<string>();
+  maxPriceChange = output<number | null>();
 
   constructor(private cartService: CartService) {}
 
@@ -23,6 +28,19 @@ export class SearchBar {
     const value = input.value;
     this.searchStr.set(value);
     this.searchStrChange.emit(value);
+  }
+
+  // Méthode pour gérer le changement de catégorie
+  onCategoryChange(event: Event) {
+    const select = event.target as HTMLSelectElement;
+    this.categoryChange.emit(select.value);
+  }
+
+  // Méthode pour gérer le changement de prix maximum
+  onMaxPriceChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const value = input.value;
+    this.maxPriceChange.emit(value ? parseFloat(value) : null);
   }
 
   clearSearch() {
@@ -37,7 +55,7 @@ export class SearchBar {
       return;
     }
 
-    this.filteredCourses.forEach(course => {
+    this.filteredCourses.forEach((course) => {
       this.cartService.addToCart(course);
     });
 
