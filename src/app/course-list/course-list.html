@@ -1,11 +1,12 @@
 <div class="container mx-auto px-4 py-8">
   <h2 class="text-3xl font-bold text-gray-800 mb-8">Nos Formations</h2>
 
-  <!-- Barre de recherche -->
-  <app-search-bar 
+  <app-search-bar
     [searchStr]="searchStr()"
     [filteredCourses]="filteredCourses()"
     (searchStrChange)="onSearchChange($event)"
+    (categoryChange)="onCategoryChange($event)"
+    (maxPriceChange)="onMaxPriceChange($event)"
   ></app-search-bar>
 
   <p class="text-gray-600 mb-6">{{ filteredCourses().length }} formation(s) trouvée(s)</p>
