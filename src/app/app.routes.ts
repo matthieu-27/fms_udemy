@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { CourseList } from './course-list/course-list';
 import { Cart } from './cart/cart';
+import { CourseList } from './course-list/course-list';
+import { Home } from './home/home';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/courses',
-    pathMatch: 'full'
+    component: Home,
   },
   {
     path: 'courses',
