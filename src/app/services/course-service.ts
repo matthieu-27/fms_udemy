@@ -7,7 +7,7 @@ import { Course } from '../models/course.model';
   providedIn: 'root',
 })
 export class CourseService {
-  private dataUrl = 'assets/data.json';
+  private dataUrl = 'assets/data_full.json';
 
   constructor(private http: HttpClient) {}
 
