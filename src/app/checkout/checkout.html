@@ -1,1 +1,80 @@
-<p>checkout works!</p>
+<div class="container mx-auto px-4 py-8 max-w-2xl">
+  <h2 class="text-3xl font-bold text-gray-800 mb-8">Validation de commande</h2>
+
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="space-y-6">
+    <!-- Champs du formulaire -->
+    <div>
+      <label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">Prénom</label>
+      <input
+        type="text"
+        id="first-name"
+        formControlName="firstName"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+      />
+      @if (checkoutForm.get('firstName')?.invalid && checkoutForm.get('firstName')?.touched) {
+        <div class="mt-1 text-sm text-red-600">Le prénom est requis</div>
+      }
+    </div>
+
+    <div>
+      <label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Nom</label>
+      <input
+        type="text"
+        id="last-name"
+        formControlName="lastName"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+      />
+      @if (checkoutForm.get('lastName')?.invalid && checkoutForm.get('lastName')?.touched) {
+        <div class="mt-1 text-sm text-red-600">Le nom est requis</div>
+      }
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+      />
+      @if (checkoutForm.get('email')?.invalid && checkoutForm.get('email')?.touched) {
+        <div class="mt-1 text-sm text-red-600">L'email est requis et doit être valide</div>
+      }
+    </div>
+
+    <div>
+      <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Adresse</label>
+      <textarea
+        id="address"
+        formControlName="address"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500"
+        rows="3"
+      ></textarea>
+      @if (checkoutForm.get('address')?.invalid && checkoutForm.get('address')?.touched) {
+        <div class="mt-1 text-sm text-red-600">L'adresse est requise</div>
+      }
+    </div>
+
+    <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+      <h3 class="text-lg font-semibold text-gray-800 mb-4">Résumé de votre commande</h3>
+      @for (item of cartItems; track item.course.id) {
+        <div class="flex justify-between mb-2">
+          <span>{{ item.course.name }} (x{{ item.quantity }})</span>
+          <span>{{ item.course.price * item.quantity | currency: 'EUR' }}</span>
+        </div>
+      }
+
+      <div class="border-t border-gray-200 mt-4 pt-4 flex justify-between font-bold">
+        <span>Total:</span>
+        <span>{{ total | currency: 'EUR' }}</span>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-purple-600 text-white py-3 px-4 rounded-md hover:bg-purple-700 transition-colors font-semibold"
+    >
+      Valider la commande
+    </button>
+  </form>
+</div>
