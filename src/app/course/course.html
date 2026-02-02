@@ -1,4 +1,8 @@
-<z-card class="w-full md:w-fit h-full" [zTitle]="course.name" [zDescription]="course.description">
+<z-card
+  class="w-full md:w-fit h-50 flex flex-col justify-between"
+  [zTitle]="course.name"
+  [zDescription]="course.description"
+>
   <div class="flex justify-between items-center gap-4">
     <span class="text-lg font-bold text-purple-600">{{ course.price | currency: 'EUR' }}</span>
     <button
