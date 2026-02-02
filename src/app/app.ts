@@ -1,10 +1,11 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { ZardToastComponent } from './shared/components/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, NgOptimizedImage, RouterLinkActive],
+  imports: [RouterOutlet, RouterLink, NgOptimizedImage, ZardToastComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
