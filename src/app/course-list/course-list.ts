@@ -1,3 +1,4 @@
+import { ZardLoaderComponent } from '@/shared/components/loader';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, model } from '@angular/core';
 import { Course as CourseComponent } from '../course/course';
@@ -7,7 +8,7 @@ import { SearchBar } from './search-bar/search-bar';
 
 @Component({
   selector: 'app-course-list',
-  imports: [CommonModule, CourseComponent, SearchBar],
+  imports: [CommonModule, CourseComponent, SearchBar, ZardLoaderComponent],
   templateUrl: './course-list.html',
   styleUrl: './course-list.css',
   standalone: true,
