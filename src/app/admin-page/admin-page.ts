@@ -23,18 +23,27 @@ import { ZardInputDirective } from '@/shared/components/input';
   styleUrl: './admin-page.css',
 })
 export class AdminPage {
+  private users = [
+    { email: 'elbab@gmail.com', password: '1234', roles: ['ADMIN', 'USER'] },
+    { email: 'hugo@gmail.com', password: '1234', roles: ['USER'] },
+  ];
+
   profileForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
   onSubmit() {
-    if (this.profileForm.valid) {
-      console.log('Form submitted:', this.profileForm.value);
-    }
+    console.log(this.profileForm.value);
+    console.log(this.isAdmin(this.profileForm.value.email!, this.profileForm.value.password!));
   }
 
-  protected onActionClick(): void {
-    alert('Redirect to Sign Up');
+  isAdmin(email: string, password: string) {
+    this.users.forEach((user) => {
+      if (user.email == email && user.password == password) {
+        return true;
+      }
+      return false;
+    });
   }
 }

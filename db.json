@@ -1,1054 +1,1061 @@
 {
-    "courses": [
-        {
-            "id": 1,
-            "name": "Mobile Development Projects",
-            "description": "Dive deep into Mobile Development with hands-on exercises and real-world examples.",
-            "price": 91.16,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 2,
-            "name": "Practical Machine Learning",
-            "description": "Master Machine Learning and become an expert in the field.",
-            "price": 134.82,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 3,
-            "name": "Cloud Computing Projects",
-            "description": "Explore the latest trends and technologies in Cloud Computing.",
-            "price": 197.03,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 4,
-            "name": "Programming Languages with Rust",
-            "description": "Dive deep into Programming Languages with hands-on exercises and real-world examples.",
-            "price": 48.97,
-            "category": "Langages de Programmation"
-        },
-        {
-            "id": 5,
-            "name": "Web Development with C++",
-            "description": "Dive deep into Web Development with hands-on exercises and real-world examples.",
-            "price": 56.37,
-            "category": "Développement Web"
-        },
-        {
-            "id": 6,
-            "name": "Blockchain for Beginners",
-            "description": "Master Blockchain and become an expert in the field.",
-            "price": 62.66,
-            "category": "Autres"
-        },
-        {
-            "id": 7,
-            "name": "Database Management with Java",
-            "description": "From zero to hero: become proficient in Database Management.",
-            "price": 150.28,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 8,
-            "name": "DevOps Fundamentals",
-            "description": "Understand the core concepts of DevOps and apply them in practice.",
-            "price": 99.88,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 9,
-            "name": "Networking with TypeScript",
-            "description": "A comprehensive guide to Networking for all skill levels.",
-            "price": 11.95,
-            "category": "Autres"
-        },
-        {
-            "id": 10,
-            "name": "Software Engineering with Swift",
-            "description": "Master Software Engineering and become an expert in the field.",
-            "price": 199.99,
-            "category": "Langages de Programmation"
-        },
-        {
-            "id": 11,
-            "name": "Cybersecurity with JavaScript",
-            "description": "A project-based approach to learning Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 12,
-            "name": "Web Development with Python",
-            "description": "Learn the basics of Web Development and build your first project.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 13,
-            "name": "Artificial Intelligence with Java",
-            "description": "A comprehensive guide to Artificial Intelligence for all skill levels.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 14,
-            "name": "Mobile Development with Java",
-            "description": "From zero to hero: become proficient in Mobile Development.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 15,
-            "name": "Cybersecurity with C++",
-            "description": "Explore the latest trends and technologies in Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 16,
-            "name": "Introduction to DevOps",
-            "description": "Learn the basics of DevOps and build your first project.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 17,
-            "name": "Data Science with Rust",
-            "description": "A project-based approach to learning Data Science.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 18,
-            "name": "Web Development with JavaScript",
-            "description": "Get certified in Web Development and boost your career.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 19,
-            "name": "Cybersecurity with Python",
-            "description": "Dive deep into Cybersecurity with hands-on exercises and real-world examples.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 20,
-            "name": "Mobile Development with Swift",
-            "description": "A comprehensive guide to Mobile Development for all skill levels.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 21,
-            "name": "Artificial Intelligence with C++",
-            "description": "Build real-world applications using Artificial Intelligence techniques.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 22,
-            "name": "Cloud Computing with Java",
-            "description": "From zero to hero: become proficient in Cloud Computing.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 23,
-            "name": "Database Management with C++",
-            "description": "Master Database Management and become an expert in the field.",
-            "price": 199.99,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 24,
-            "name": "DevOps with Go",
-            "description": "Learn the basics of DevOps and build your first project.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 25,
-            "name": "Web Development with TypeScript",
-            "description": "Explore the latest trends and technologies in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 26,
-            "name": "Cybersecurity with Java",
-            "description": "A project-based approach to learning Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 27,
-            "name": "Mobile Development with Kotlin",
-            "description": "Understand the core concepts of Mobile Development and apply them in practice.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 28,
-            "name": "Artificial Intelligence with Python",
-            "description": "Get certified in Artificial Intelligence and boost your career.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 29,
-            "name": "Introduction to Cloud Computing",
-            "description": "A comprehensive guide to Cloud Computing for all skill levels.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 30,
-            "name": "Cybersecurity with Rust",
-            "description": "From zero to hero: become proficient in Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 31,
-            "name": "Web Development with Java",
-            "description": "Build real-world applications using Web Development techniques.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 32,
-            "name": "Mobile Development with C++",
-            "description": "Master Mobile Development and become an expert in the field.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 33,
-            "name": "Artificial Intelligence with JavaScript",
-            "description": "Learn the basics of Artificial Intelligence and build your first project.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 34,
-            "name": "DevOps with Swift",
-            "description": "Explore the latest trends and technologies in DevOps.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 35,
-            "name": "Database Management with Python",
-            "description": "A project-based approach to learning Database Management.",
-            "price": 199.99,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 36,
-            "name": "Cybersecurity with Go",
-            "description": "Get certified in Cybersecurity and boost your career.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 37,
-            "name": "Web Development with Rust",
-            "description": "From zero to hero: become proficient in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 38,
-            "name": "Mobile Development with JavaScript",
-            "description": "Dive deep into Mobile Development with hands-on exercises and real-world examples.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 39,
-            "name": "Artificial Intelligence with Swift",
-            "description": "A comprehensive guide to Artificial Intelligence for all skill levels.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 40,
-            "name": "Introduction to DevOps",
-            "description": "Master DevOps and become an expert in the field.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 41,
-            "name": "Cybersecurity with TypeScript",
-            "description": "Learn the basics of Cybersecurity and build your first project.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 42,
-            "name": "Web Development with Kotlin",
-            "description": "Explore the latest trends and technologies in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 43,
-            "name": "Mobile Development with Go",
-            "description": "From zero to hero: become proficient in Mobile Development.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 44,
-            "name": "Artificial Intelligence with Rust",
-            "description": "Build real-world applications using Artificial Intelligence techniques.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 45,
-            "name": "Cloud Computing with Python",
-            "description": "A project-based approach to learning Cloud Computing.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 46,
-            "name": "Cybersecurity with Java",
-            "description": "Understand the core concepts of Cybersecurity and apply them in practice.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 47,
-            "name": "Web Development with C#",
-            "description": "Get certified in Web Development and boost your career.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 48,
-            "name": "Mobile Development with TypeScript",
-            "description": "Master Mobile Development and become an expert in the field.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 49,
-            "name": "Artificial Intelligence with C#",
-            "description": "From zero to hero: become proficient in Artificial Intelligence.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 50,
-            "name": "DevOps with JavaScript",
-            "description": "Learn the basics of DevOps and build your first project.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 51,
-            "name": "Database Management with JavaScript",
-            "description": "Explore the latest trends and technologies in Database Management.",
-            "price": 199.99,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 52,
-            "name": "Cybersecurity with Swift",
-            "description": "A comprehensive guide to Cybersecurity for all skill levels.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 53,
-            "name": "Web Development with Go",
-            "description": "Build real-world applications using Web Development techniques.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 54,
-            "name": "Mobile Development with Rust",
-            "description": "From zero to hero: become proficient in Mobile Development.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 55,
-            "name": "Artificial Intelligence with Java",
-            "description": "Get certified in Artificial Intelligence and boost your career.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 56,
-            "name": "Introduction to Cloud Computing",
-            "description": "Learn the basics of Cloud Computing and build your first project.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 57,
-            "name": "Cybersecurity with Kotlin",
-            "description": "Master Cybersecurity and become an expert in the field.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 58,
-            "name": "Web Development with Java",
-            "description": "A project-based approach to learning Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 59,
-            "name": "Mobile Development with Python",
-            "description": "Explore the latest trends and technologies in Mobile Development.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 60,
-            "name": "Artificial Intelligence with TypeScript",
-            "description": "From zero to hero: become proficient in Artificial Intelligence.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 61,
-            "name": "DevOps with Rust",
-            "description": "Dive deep into DevOps with hands-on exercises and real-world examples.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 62,
-            "name": "Database Management with Swift",
-            "description": "Learn the basics of Database Management and build your first project.",
-            "price": 199.99,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 63,
-            "name": "Cybersecurity with JavaScript",
-            "description": "A comprehensive guide to Cybersecurity for all skill levels.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 64,
-            "name": "Web Development with C++",
-            "description": "Get certified in Web Development and boost your career.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 65,
-            "name": "Mobile Development with Java",
-            "description": "Master Mobile Development and become an expert in the field.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 66,
-            "name": "Artificial Intelligence with Go",
-            "description": "Build real-world applications using Artificial Intelligence techniques.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 67,
-            "name": "Cloud Computing with Kotlin",
-            "description": "From zero to hero: become proficient in Cloud Computing.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 68,
-            "name": "Cybersecurity with Python",
-            "description": "Learn the basics of Cybersecurity and build your first project.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 69,
-            "name": "Web Development with TypeScript",
-            "description": "Explore the latest trends and technologies in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 70,
-            "name": "Mobile Development with Swift",
-            "description": "A project-based approach to learning Mobile Development.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 71,
-            "name": "Artificial Intelligence with Rust",
-            "description": "Get certified in Artificial Intelligence and boost your career.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 72,
-            "name": "Introduction to DevOps",
-            "description": "Master DevOps and become an expert in the field.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 73,
-            "name": "Cybersecurity with Java",
-            "description": "From zero to hero: become proficient in Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 74,
-            "name": "Web Development with JavaScript",
-            "description": "Build real-world applications using Web Development techniques.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 75,
-            "name": "Mobile Development with C++",
-            "description": "A comprehensive guide to Mobile Development for all skill levels.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 76,
-            "name": "Artificial Intelligence with Kotlin",
-            "description": "Learn the basics of Artificial Intelligence and build your first project.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 77,
-            "name": "DevOps with Go",
-            "description": "Explore the latest trends and technologies in DevOps.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 78,
-            "name": "Database Management with Python",
-            "description": "Get certified in Database Management and boost your career.",
-            "price": 199.99,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 79,
-            "name": "Cybersecurity with TypeScript",
-            "description": "Master Cybersecurity and become an expert in the field.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 80,
-            "name": "Web Development with Rust",
-            "description": "From zero to hero: become proficient in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 81,
-            "name": "Mobile Development with Java",
-            "description": "Dive deep into Mobile Development with hands-on exercises and real-world examples.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 82,
-            "name": "Artificial Intelligence with Swift",
-            "description": "A project-based approach to learning Artificial Intelligence.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 83,
-            "name": "Cloud Computing with JavaScript",
-            "description": "Learn the basics of Cloud Computing and build your first project.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 84,
-            "name": "Cybersecurity with Kotlin",
-            "description": "From zero to hero: become proficient in Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 85,
-            "name": "Web Development with Go",
-            "description": "Explore the latest trends and technologies in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 86,
-            "name": "Mobile Development with Rust",
-            "description": "Master Mobile Development and become an expert in the field.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 87,
-            "name": "Artificial Intelligence with Java",
-            "description": "Build real-world applications using Artificial Intelligence techniques.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 88,
-            "name": "Introduction to DevOps",
-            "description": "Get certified in DevOps and boost your career.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 89,
-            "name": "Cybersecurity with Python",
-            "description": "A comprehensive guide to Cybersecurity for all skill levels.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 90,
-            "name": "Web Development with C#",
-            "description": "From zero to hero: become proficient in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 91,
-            "name": "Mobile Development with TypeScript",
-            "description": "Learn the basics of Mobile Development and build your first project.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 92,
-            "name": "Artificial Intelligence with Go",
-            "description": "Get certified in Artificial Intelligence and boost your career.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 93,
-            "name": "DevOps with Swift",
-            "description": "Explore the latest trends and technologies in DevOps.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 94,
-            "name": "Database Management with JavaScript",
-            "description": "Master Database Management and become an expert in the field.",
-            "price": 199.99,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 95,
-            "name": "Cybersecurity with Java",
-            "description": "From zero to hero: become proficient in Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 96,
-            "name": "Web Development with Java",
-            "description": "Build real-world applications using Web Development techniques.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 97,
-            "name": "Mobile Development with Python",
-            "description": "A project-based approach to learning Mobile Development.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 98,
-            "name": "Artificial Intelligence with Rust",
-            "description": "Learn the basics of Artificial Intelligence and build your first project.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 99,
-            "name": "Cloud Computing with Kotlin",
-            "description": "Get certified in Cloud Computing and boost your career.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 100,
-            "name": "Cybersecurity with TypeScript",
-            "description": "Master Cybersecurity and become an expert in the field.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 101,
-            "name": "Web Development with C++",
-            "description": "From zero to hero: become proficient in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 102,
-            "name": "Mobile Development with Java",
-            "description": "Explore the latest trends and technologies in Mobile Development.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 103,
-            "name": "Artificial Intelligence with Swift",
-            "description": "Build real-world applications using Artificial Intelligence techniques.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 104,
-            "name": "Introduction to DevOps",
-            "description": "Learn the basics of DevOps and build your first project.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 105,
-            "name": "Cybersecurity with Go",
-            "description": "From zero to hero: become proficient in Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 106,
-            "name": "Web Development with JavaScript",
-            "description": "Get certified in Web Development and boost your career.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 107,
-            "name": "Mobile Development with Rust",
-            "description": "A comprehensive guide to Mobile Development for all skill levels.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 108,
-            "name": "Artificial Intelligence with Kotlin",
-            "description": "Master Artificial Intelligence and become an expert in the field.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 109,
-            "name": "DevOps with Python",
-            "description": "Explore the latest trends and technologies in DevOps.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 110,
-            "name": "Database Management with TypeScript",
-            "description": "From zero to hero: become proficient in Database Management.",
-            "price": 199.99,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 111,
-            "name": "Cybersecurity with Java",
-            "description": "Learn the basics of Cybersecurity and build your first project.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 112,
-            "name": "Web Development with Go",
-            "description": "Build real-world applications using Web Development techniques.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 113,
-            "name": "Mobile Development with Swift",
-            "description": "Get certified in Mobile Development and boost your career.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 114,
-            "name": "Artificial Intelligence with JavaScript",
-            "description": "From zero to hero: become proficient in Artificial Intelligence.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 115,
-            "name": "Cloud Computing with Rust",
-            "description": "Master Cloud Computing and become an expert in the field.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 116,
-            "name": "Cybersecurity with Kotlin",
-            "description": "A project-based approach to learning Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 117,
-            "name": "Web Development with Java",
-            "description": "Explore the latest trends and technologies in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 118,
-            "name": "Mobile Development with Python",
-            "description": "From zero to hero: become proficient in Mobile Development.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 119,
-            "name": "Artificial Intelligence with Go",
-            "description": "Get certified in Artificial Intelligence and boost your career.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 120,
-            "name": "Introduction to DevOps",
-            "description": "Build real-world applications using DevOps techniques.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 121,
-            "name": "Cybersecurity with TypeScript",
-            "description": "Master Cybersecurity and become an expert in the field.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 122,
-            "name": "Web Development with C#",
-            "description": "From zero to hero: become proficient in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 123,
-            "name": "Mobile Development with JavaScript",
-            "description": "Learn the basics of Mobile Development and build your first project.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 124,
-            "name": "Artificial Intelligence with Rust",
-            "description": "A comprehensive guide to Artificial Intelligence for all skill levels.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 125,
-            "name": "DevOps with Kotlin",
-            "description": "Explore the latest trends and technologies in DevOps.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 126,
-            "name": "Database Management with Swift",
-            "description": "Get certified in Database Management and boost your career.",
-            "price": 199.99,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 127,
-            "name": "Cybersecurity with Java",
-            "description": "From zero to hero: become proficient in Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 128,
-            "name": "Web Development with Go",
-            "description": "Build real-world applications using Web Development techniques.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 129,
-            "name": "Mobile Development with TypeScript",
-            "description": "Master Mobile Development and become an expert in the field.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 130,
-            "name": "Artificial Intelligence with Python",
-            "description": "Learn the basics of Artificial Intelligence and build your first project.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 131,
-            "name": "Cloud Computing with Java",
-            "description": "Get certified in Cloud Computing and boost your career.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 132,
-            "name": "Cybersecurity with Rust",
-            "description": "A project-based approach to learning Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 133,
-            "name": "Web Development with JavaScript",
-            "description": "From zero to hero: become proficient in Web Development.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 134,
-            "name": "Mobile Development with Kotlin",
-            "description": "Explore the latest trends and technologies in Mobile Development.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 135,
-            "name": "Artificial Intelligence with Swift",
-            "description": "Build real-world applications using Artificial Intelligence techniques.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 136,
-            "name": "Introduction to DevOps",
-            "description": "Master DevOps and become an expert in the field.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 137,
-            "name": "Cybersecurity with Go",
-            "description": "From zero to hero: become proficient in Cybersecurity.",
-            "price": 199.99,
-            "category": "Cybersécurité"
-        },
-        {
-            "id": 138,
-            "name": "Web Development with Java",
-            "description": "Get certified in Web Development and boost your career.",
-            "price": 199.99,
-            "category": "Développement Web"
-        },
-        {
-            "id": 139,
-            "name": "Mobile Development with Python",
-            "description": "A comprehensive guide to Mobile Development for all skill levels.",
-            "price": 199.99,
-            "category": "Développement Mobile"
-        },
-        {
-            "id": 140,
-            "name": "Artificial Intelligence with TypeScript",
-            "description": "Master Artificial Intelligence and become an expert in the field.",
-            "price": 199.99,
-            "category": "Data Science & IA"
-        },
-        {
-            "id": 141,
-            "name": "DevOps with Rust",
-            "description": "Explore the latest trends and technologies in DevOps.",
-            "price": 199.99,
-            "category": "Cloud & DevOps"
-        },
-        {
-            "id": 142,
-            "name": "Networking with Java",
-            "description": "A project-based approach to learning Networking.",
-            "price": 115.07,
-            "category": "Autres"
-        },
-        {
-            "id": 143,
-            "name": "Blockchain with C++",
-            "description": "A comprehensive guide to Blockchain for all skill levels.",
-            "price": 66.46,
-            "category": "Autres"
-        },
-        {
-            "id": 144,
-            "name": "Blockchain with C#",
-            "description": "Master Blockchain and become an expert in the field.",
-            "price": 191.43,
-            "category": "Autres"
-        },
-        {
-            "id": 145,
-            "name": "Algorithms with C#",
-            "description": "Master Algorithms and become an expert in the field.",
-            "price": 197.5,
-            "category": "Bases de Données & Algorithmes"
-        },
-        {
-            "id": 146,
-            "name": "Introduction to Web Development",
-            "description": "Build real-world applications using Web Development techniques.",
-            "price": 15.01,
-            "category": "Développement Web"
-        },
-        {
-            "id": 147,
-            "name": "Game Development with JavaScript",
-            "description": "Explore the latest trends and technologies in Game Development.",
-            "price": 114.21,
-            "category": "Autres"
-        },
-        {
-            "id": 148,
-            "name": "UI/UX Design for Beginners",
-            "description": "Understand the core concepts of UI/UX Design and apply them in practice.",
-            "price": 172.05,
-            "category": "Autres"
-        },
-        {
-            "id": 149,
-            "name": "UI/UX Design with Java",
-            "description": "Dive deep into UI/UX Design with hands-on exercises and real-world examples.",
-            "price": 141.19,
-            "category": "Autres"
-        },
-        {
-            "id": 150,
-            "name": "Internet of Things (IoT) with Swift",
-            "description": "Understand the core concepts of Internet of Things (IoT) and apply them in practice.",
-            "price": 82.79,
-            "category": "Autres"
-        }
-    ]
+  "courses": [
+    {
+      "id": 1,
+      "name": "Mobile Development Projects",
+      "description": "Dive deep into Mobile Development with hands-on exercises and real-world examples.",
+      "price": 91.16,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 2,
+      "name": "Practical Machine Learning",
+      "description": "Master Machine Learning and become an expert in the field.",
+      "price": 134.82,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 3,
+      "name": "Cloud Computing Projects",
+      "description": "Explore the latest trends and technologies in Cloud Computing.",
+      "price": 197.03,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 4,
+      "name": "Programming Languages with Rust",
+      "description": "Dive deep into Programming Languages with hands-on exercises and real-world examples.",
+      "price": 48.97,
+      "category": "Langages de Programmation"
+    },
+    {
+      "id": 5,
+      "name": "Web Development with C++",
+      "description": "Dive deep into Web Development with hands-on exercises and real-world examples.",
+      "price": 56.37,
+      "category": "Développement Web"
+    },
+    {
+      "id": 6,
+      "name": "Blockchain for Beginners",
+      "description": "Master Blockchain and become an expert in the field.",
+      "price": 62.66,
+      "category": "Autres"
+    },
+    {
+      "id": 7,
+      "name": "Database Management with Java",
+      "description": "From zero to hero: become proficient in Database Management.",
+      "price": 150.28,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 8,
+      "name": "DevOps Fundamentals",
+      "description": "Understand the core concepts of DevOps and apply them in practice.",
+      "price": 99.88,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 9,
+      "name": "Networking with TypeScript",
+      "description": "A comprehensive guide to Networking for all skill levels.",
+      "price": 11.95,
+      "category": "Autres"
+    },
+    {
+      "id": 10,
+      "name": "Software Engineering with Swift",
+      "description": "Master Software Engineering and become an expert in the field.",
+      "price": 199.99,
+      "category": "Langages de Programmation"
+    },
+    {
+      "id": 11,
+      "name": "Cybersecurity with JavaScript",
+      "description": "A project-based approach to learning Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 12,
+      "name": "Web Development with Python",
+      "description": "Learn the basics of Web Development and build your first project.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 13,
+      "name": "Artificial Intelligence with Java",
+      "description": "A comprehensive guide to Artificial Intelligence for all skill levels.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 14,
+      "name": "Mobile Development with Java",
+      "description": "From zero to hero: become proficient in Mobile Development.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 15,
+      "name": "Cybersecurity with C++",
+      "description": "Explore the latest trends and technologies in Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 16,
+      "name": "Introduction to DevOps",
+      "description": "Learn the basics of DevOps and build your first project.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 17,
+      "name": "Data Science with Rust",
+      "description": "A project-based approach to learning Data Science.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 18,
+      "name": "Web Development with JavaScript",
+      "description": "Get certified in Web Development and boost your career.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 19,
+      "name": "Cybersecurity with Python",
+      "description": "Dive deep into Cybersecurity with hands-on exercises and real-world examples.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 20,
+      "name": "Mobile Development with Swift",
+      "description": "A comprehensive guide to Mobile Development for all skill levels.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 21,
+      "name": "Artificial Intelligence with C++",
+      "description": "Build real-world applications using Artificial Intelligence techniques.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 22,
+      "name": "Cloud Computing with Java",
+      "description": "From zero to hero: become proficient in Cloud Computing.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 23,
+      "name": "Database Management with C++",
+      "description": "Master Database Management and become an expert in the field.",
+      "price": 199.99,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 24,
+      "name": "DevOps with Go",
+      "description": "Learn the basics of DevOps and build your first project.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 25,
+      "name": "Web Development with TypeScript",
+      "description": "Explore the latest trends and technologies in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 26,
+      "name": "Cybersecurity with Java",
+      "description": "A project-based approach to learning Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 27,
+      "name": "Mobile Development with Kotlin",
+      "description": "Understand the core concepts of Mobile Development and apply them in practice.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 28,
+      "name": "Artificial Intelligence with Python",
+      "description": "Get certified in Artificial Intelligence and boost your career.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 29,
+      "name": "Introduction to Cloud Computing",
+      "description": "A comprehensive guide to Cloud Computing for all skill levels.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 30,
+      "name": "Cybersecurity with Rust",
+      "description": "From zero to hero: become proficient in Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 31,
+      "name": "Web Development with Java",
+      "description": "Build real-world applications using Web Development techniques.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 32,
+      "name": "Mobile Development with C++",
+      "description": "Master Mobile Development and become an expert in the field.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 33,
+      "name": "Artificial Intelligence with JavaScript",
+      "description": "Learn the basics of Artificial Intelligence and build your first project.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 34,
+      "name": "DevOps with Swift",
+      "description": "Explore the latest trends and technologies in DevOps.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 35,
+      "name": "Database Management with Python",
+      "description": "A project-based approach to learning Database Management.",
+      "price": 199.99,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 36,
+      "name": "Cybersecurity with Go",
+      "description": "Get certified in Cybersecurity and boost your career.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 37,
+      "name": "Web Development with Rust",
+      "description": "From zero to hero: become proficient in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 38,
+      "name": "Mobile Development with JavaScript",
+      "description": "Dive deep into Mobile Development with hands-on exercises and real-world examples.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 39,
+      "name": "Artificial Intelligence with Swift",
+      "description": "A comprehensive guide to Artificial Intelligence for all skill levels.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 40,
+      "name": "Introduction to DevOps",
+      "description": "Master DevOps and become an expert in the field.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 41,
+      "name": "Cybersecurity with TypeScript",
+      "description": "Learn the basics of Cybersecurity and build your first project.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 42,
+      "name": "Web Development with Kotlin",
+      "description": "Explore the latest trends and technologies in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 43,
+      "name": "Mobile Development with Go",
+      "description": "From zero to hero: become proficient in Mobile Development.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 44,
+      "name": "Artificial Intelligence with Rust",
+      "description": "Build real-world applications using Artificial Intelligence techniques.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 45,
+      "name": "Cloud Computing with Python",
+      "description": "A project-based approach to learning Cloud Computing.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 46,
+      "name": "Cybersecurity with Java",
+      "description": "Understand the core concepts of Cybersecurity and apply them in practice.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 47,
+      "name": "Web Development with C#",
+      "description": "Get certified in Web Development and boost your career.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 48,
+      "name": "Mobile Development with TypeScript",
+      "description": "Master Mobile Development and become an expert in the field.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 49,
+      "name": "Artificial Intelligence with C#",
+      "description": "From zero to hero: become proficient in Artificial Intelligence.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 50,
+      "name": "DevOps with JavaScript",
+      "description": "Learn the basics of DevOps and build your first project.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 51,
+      "name": "Database Management with JavaScript",
+      "description": "Explore the latest trends and technologies in Database Management.",
+      "price": 199.99,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 52,
+      "name": "Cybersecurity with Swift",
+      "description": "A comprehensive guide to Cybersecurity for all skill levels.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 53,
+      "name": "Web Development with Go",
+      "description": "Build real-world applications using Web Development techniques.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 54,
+      "name": "Mobile Development with Rust",
+      "description": "From zero to hero: become proficient in Mobile Development.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 55,
+      "name": "Artificial Intelligence with Java",
+      "description": "Get certified in Artificial Intelligence and boost your career.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 56,
+      "name": "Introduction to Cloud Computing",
+      "description": "Learn the basics of Cloud Computing and build your first project.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 57,
+      "name": "Cybersecurity with Kotlin",
+      "description": "Master Cybersecurity and become an expert in the field.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 58,
+      "name": "Web Development with Java",
+      "description": "A project-based approach to learning Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 59,
+      "name": "Mobile Development with Python",
+      "description": "Explore the latest trends and technologies in Mobile Development.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 60,
+      "name": "Artificial Intelligence with TypeScript",
+      "description": "From zero to hero: become proficient in Artificial Intelligence.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 61,
+      "name": "DevOps with Rust",
+      "description": "Dive deep into DevOps with hands-on exercises and real-world examples.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 62,
+      "name": "Database Management with Swift",
+      "description": "Learn the basics of Database Management and build your first project.",
+      "price": 199.99,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 63,
+      "name": "Cybersecurity with JavaScript",
+      "description": "A comprehensive guide to Cybersecurity for all skill levels.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 64,
+      "name": "Web Development with C++",
+      "description": "Get certified in Web Development and boost your career.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 65,
+      "name": "Mobile Development with Java",
+      "description": "Master Mobile Development and become an expert in the field.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 66,
+      "name": "Artificial Intelligence with Go",
+      "description": "Build real-world applications using Artificial Intelligence techniques.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 67,
+      "name": "Cloud Computing with Kotlin",
+      "description": "From zero to hero: become proficient in Cloud Computing.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 68,
+      "name": "Cybersecurity with Python",
+      "description": "Learn the basics of Cybersecurity and build your first project.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 69,
+      "name": "Web Development with TypeScript",
+      "description": "Explore the latest trends and technologies in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 70,
+      "name": "Mobile Development with Swift",
+      "description": "A project-based approach to learning Mobile Development.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 71,
+      "name": "Artificial Intelligence with Rust",
+      "description": "Get certified in Artificial Intelligence and boost your career.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 72,
+      "name": "Introduction to DevOps",
+      "description": "Master DevOps and become an expert in the field.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 73,
+      "name": "Cybersecurity with Java",
+      "description": "From zero to hero: become proficient in Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 74,
+      "name": "Web Development with JavaScript",
+      "description": "Build real-world applications using Web Development techniques.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 75,
+      "name": "Mobile Development with C++",
+      "description": "A comprehensive guide to Mobile Development for all skill levels.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 76,
+      "name": "Artificial Intelligence with Kotlin",
+      "description": "Learn the basics of Artificial Intelligence and build your first project.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 77,
+      "name": "DevOps with Go",
+      "description": "Explore the latest trends and technologies in DevOps.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 78,
+      "name": "Database Management with Python",
+      "description": "Get certified in Database Management and boost your career.",
+      "price": 199.99,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 79,
+      "name": "Cybersecurity with TypeScript",
+      "description": "Master Cybersecurity and become an expert in the field.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 80,
+      "name": "Web Development with Rust",
+      "description": "From zero to hero: become proficient in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 81,
+      "name": "Mobile Development with Java",
+      "description": "Dive deep into Mobile Development with hands-on exercises and real-world examples.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 82,
+      "name": "Artificial Intelligence with Swift",
+      "description": "A project-based approach to learning Artificial Intelligence.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 83,
+      "name": "Cloud Computing with JavaScript",
+      "description": "Learn the basics of Cloud Computing and build your first project.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 84,
+      "name": "Cybersecurity with Kotlin",
+      "description": "From zero to hero: become proficient in Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 85,
+      "name": "Web Development with Go",
+      "description": "Explore the latest trends and technologies in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 86,
+      "name": "Mobile Development with Rust",
+      "description": "Master Mobile Development and become an expert in the field.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 87,
+      "name": "Artificial Intelligence with Java",
+      "description": "Build real-world applications using Artificial Intelligence techniques.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 88,
+      "name": "Introduction to DevOps",
+      "description": "Get certified in DevOps and boost your career.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 89,
+      "name": "Cybersecurity with Python",
+      "description": "A comprehensive guide to Cybersecurity for all skill levels.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 90,
+      "name": "Web Development with C#",
+      "description": "From zero to hero: become proficient in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 91,
+      "name": "Mobile Development with TypeScript",
+      "description": "Learn the basics of Mobile Development and build your first project.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 92,
+      "name": "Artificial Intelligence with Go",
+      "description": "Get certified in Artificial Intelligence and boost your career.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 93,
+      "name": "DevOps with Swift",
+      "description": "Explore the latest trends and technologies in DevOps.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 94,
+      "name": "Database Management with JavaScript",
+      "description": "Master Database Management and become an expert in the field.",
+      "price": 199.99,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 95,
+      "name": "Cybersecurity with Java",
+      "description": "From zero to hero: become proficient in Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 96,
+      "name": "Web Development with Java",
+      "description": "Build real-world applications using Web Development techniques.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 97,
+      "name": "Mobile Development with Python",
+      "description": "A project-based approach to learning Mobile Development.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 98,
+      "name": "Artificial Intelligence with Rust",
+      "description": "Learn the basics of Artificial Intelligence and build your first project.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 99,
+      "name": "Cloud Computing with Kotlin",
+      "description": "Get certified in Cloud Computing and boost your career.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 100,
+      "name": "Cybersecurity with TypeScript",
+      "description": "Master Cybersecurity and become an expert in the field.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 101,
+      "name": "Web Development with C++",
+      "description": "From zero to hero: become proficient in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 102,
+      "name": "Mobile Development with Java",
+      "description": "Explore the latest trends and technologies in Mobile Development.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 103,
+      "name": "Artificial Intelligence with Swift",
+      "description": "Build real-world applications using Artificial Intelligence techniques.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 104,
+      "name": "Introduction to DevOps",
+      "description": "Learn the basics of DevOps and build your first project.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 105,
+      "name": "Cybersecurity with Go",
+      "description": "From zero to hero: become proficient in Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 106,
+      "name": "Web Development with JavaScript",
+      "description": "Get certified in Web Development and boost your career.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 107,
+      "name": "Mobile Development with Rust",
+      "description": "A comprehensive guide to Mobile Development for all skill levels.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 108,
+      "name": "Artificial Intelligence with Kotlin",
+      "description": "Master Artificial Intelligence and become an expert in the field.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 109,
+      "name": "DevOps with Python",
+      "description": "Explore the latest trends and technologies in DevOps.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 110,
+      "name": "Database Management with TypeScript",
+      "description": "From zero to hero: become proficient in Database Management.",
+      "price": 199.99,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 111,
+      "name": "Cybersecurity with Java",
+      "description": "Learn the basics of Cybersecurity and build your first project.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 112,
+      "name": "Web Development with Go",
+      "description": "Build real-world applications using Web Development techniques.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 113,
+      "name": "Mobile Development with Swift",
+      "description": "Get certified in Mobile Development and boost your career.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 114,
+      "name": "Artificial Intelligence with JavaScript",
+      "description": "From zero to hero: become proficient in Artificial Intelligence.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 115,
+      "name": "Cloud Computing with Rust",
+      "description": "Master Cloud Computing and become an expert in the field.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 116,
+      "name": "Cybersecurity with Kotlin",
+      "description": "A project-based approach to learning Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 117,
+      "name": "Web Development with Java",
+      "description": "Explore the latest trends and technologies in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 118,
+      "name": "Mobile Development with Python",
+      "description": "From zero to hero: become proficient in Mobile Development.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 119,
+      "name": "Artificial Intelligence with Go",
+      "description": "Get certified in Artificial Intelligence and boost your career.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 120,
+      "name": "Introduction to DevOps",
+      "description": "Build real-world applications using DevOps techniques.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 121,
+      "name": "Cybersecurity with TypeScript",
+      "description": "Master Cybersecurity and become an expert in the field.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 122,
+      "name": "Web Development with C#",
+      "description": "From zero to hero: become proficient in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 123,
+      "name": "Mobile Development with JavaScript",
+      "description": "Learn the basics of Mobile Development and build your first project.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 124,
+      "name": "Artificial Intelligence with Rust",
+      "description": "A comprehensive guide to Artificial Intelligence for all skill levels.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 125,
+      "name": "DevOps with Kotlin",
+      "description": "Explore the latest trends and technologies in DevOps.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 126,
+      "name": "Database Management with Swift",
+      "description": "Get certified in Database Management and boost your career.",
+      "price": 199.99,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 127,
+      "name": "Cybersecurity with Java",
+      "description": "From zero to hero: become proficient in Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 128,
+      "name": "Web Development with Go",
+      "description": "Build real-world applications using Web Development techniques.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 129,
+      "name": "Mobile Development with TypeScript",
+      "description": "Master Mobile Development and become an expert in the field.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 130,
+      "name": "Artificial Intelligence with Python",
+      "description": "Learn the basics of Artificial Intelligence and build your first project.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 131,
+      "name": "Cloud Computing with Java",
+      "description": "Get certified in Cloud Computing and boost your career.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 132,
+      "name": "Cybersecurity with Rust",
+      "description": "A project-based approach to learning Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 133,
+      "name": "Web Development with JavaScript",
+      "description": "From zero to hero: become proficient in Web Development.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 134,
+      "name": "Mobile Development with Kotlin",
+      "description": "Explore the latest trends and technologies in Mobile Development.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 135,
+      "name": "Artificial Intelligence with Swift",
+      "description": "Build real-world applications using Artificial Intelligence techniques.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 136,
+      "name": "Introduction to DevOps",
+      "description": "Master DevOps and become an expert in the field.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 137,
+      "name": "Cybersecurity with Go",
+      "description": "From zero to hero: become proficient in Cybersecurity.",
+      "price": 199.99,
+      "category": "Cybersécurité"
+    },
+    {
+      "id": 138,
+      "name": "Web Development with Java",
+      "description": "Get certified in Web Development and boost your career.",
+      "price": 199.99,
+      "category": "Développement Web"
+    },
+    {
+      "id": 139,
+      "name": "Mobile Development with Python",
+      "description": "A comprehensive guide to Mobile Development for all skill levels.",
+      "price": 199.99,
+      "category": "Développement Mobile"
+    },
+    {
+      "id": 140,
+      "name": "Artificial Intelligence with TypeScript",
+      "description": "Master Artificial Intelligence and become an expert in the field.",
+      "price": 199.99,
+      "category": "Data Science & IA"
+    },
+    {
+      "id": 141,
+      "name": "DevOps with Rust",
+      "description": "Explore the latest trends and technologies in DevOps.",
+      "price": 199.99,
+      "category": "Cloud & DevOps"
+    },
+    {
+      "id": 142,
+      "name": "Networking with Java",
+      "description": "A project-based approach to learning Networking.",
+      "price": 115.07,
+      "category": "Autres"
+    },
+    {
+      "id": 143,
+      "name": "Blockchain with C++",
+      "description": "A comprehensive guide to Blockchain for all skill levels.",
+      "price": 66.46,
+      "category": "Autres"
+    },
+    {
+      "id": 144,
+      "name": "Blockchain with C#",
+      "description": "Master Blockchain and become an expert in the field.",
+      "price": 191.43,
+      "category": "Autres"
+    },
+    {
+      "id": 145,
+      "name": "Algorithms with C#",
+      "description": "Master Algorithms and become an expert in the field.",
+      "price": 197.5,
+      "category": "Bases de Données & Algorithmes"
+    },
+    {
+      "id": 146,
+      "name": "Introduction to Web Development",
+      "description": "Build real-world applications using Web Development techniques.",
+      "price": 15.01,
+      "category": "Développement Web"
+    },
+    {
+      "id": 147,
+      "name": "Game Development with JavaScript",
+      "description": "Explore the latest trends and technologies in Game Development.",
+      "price": 114.21,
+      "category": "Autres"
+    },
+    {
+      "id": 148,
+      "name": "UI/UX Design for Beginners",
+      "description": "Understand the core concepts of UI/UX Design and apply them in practice.",
+      "price": 172.05,
+      "category": "Autres"
+    },
+    {
+      "id": 149,
+      "name": "UI/UX Design with Java",
+      "description": "Dive deep into UI/UX Design with hands-on exercises and real-world examples.",
+      "price": 141.19,
+      "category": "Autres"
+    },
+    {
+      "id": 150,
+      "name": "Internet of Things (IoT) with Swift",
+      "description": "Understand the core concepts of Internet of Things (IoT) and apply them in practice.",
+      "price": 82.79,
+      "category": "Autres"
+    },
+    {
+      "id": 151,
+      "name": "Programming Languages with Rust",
+      "description": "Dive deep into Programming Languages with hands-on exercises and real-world examples.",
+      "price": 48.97,
+      "category": "Langages de Programmation"
+    }
+  ]
 }
