@@ -1,8 +1,9 @@
 <header class="bg-purple-200 h-20 w-full">
-  <div class="container mx-auto flex items-center justify-between h-full">
-    <h1 class="text-2xl font-bold">FMS - Udemy</h1>
+  <div class="container mx-auto flex items-center justify-between h-full md:px-0 px-8">
+    <a [routerLink]="['/']" class="">
+      <img ngSrc="udemy.png" alt="Udemy" width="130" height="130" priority />
+    </a>
     <nav class="flex gap-4 font-bold text-xl">
-      <a [routerLink]="['/']">Acceuil</a>
       <a [routerLink]="['/courses']" class="cursor-pointer">Cours</a>
       <a [routerLink]="['/cart']" class="cursor-pointer">Panier</a>
     </nav>
