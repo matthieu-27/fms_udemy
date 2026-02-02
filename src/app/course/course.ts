@@ -1,5 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { toast } from 'ngx-sonner';
 import { Course as CourseModel } from '../models/course.model';
 import { CartService } from '../services/cart-service';
 
@@ -17,6 +18,8 @@ export class Course {
   // Méthode pour ajouter au panier
   addToCart() {
     this.cartService.addToCart(this.course);
-    alert(`Cours "${this.course.name}" ajouté au panier !`);
+    toast.success(`Cours ajouté au panier !`, {
+      description: `Le cours en ligne ${this.course.name} a bien été ajouté au panier`,
+    });
   }
 }
