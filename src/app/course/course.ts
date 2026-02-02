@@ -1,4 +1,5 @@
 import { ZardButtonComponent } from '@/shared/components/button';
+import { ZardCardComponent } from '@/shared/components/card';
 import { ZardIconComponent } from '@/shared/components/icon';
 import { CurrencyPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
@@ -8,7 +9,7 @@ import { CartService } from '../services/cart-service';
 
 @Component({
   selector: 'app-course',
-  imports: [CurrencyPipe, ZardButtonComponent, ZardIconComponent],
+  imports: [CurrencyPipe, ZardButtonComponent, ZardIconComponent, ZardCardComponent],
   templateUrl: './course.html',
   styleUrl: './course.css',
 })
