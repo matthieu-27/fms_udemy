@@ -1,0 +1,39 @@
+<div class="min-h-[calc(100vh-5rem)] w-full flex justify-center items-center">
+  <z-card
+    class="w-full md:w-94"
+    zTitle="Login to your account"
+    zDescription="Enter your email below to login to your account"
+  >
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="max-w-sm space-y-6">
+      <z-form-field>
+        <label for="email" z-form-label zRequired>Email</label>
+        <z-form-control>
+          <input
+            id="email"
+            z-input
+            type="email"
+            placeholder="Enter your email"
+            formControlName="email"
+          />
+        </z-form-control>
+        <z-form-message zType="default">We'll use this for account notifications.</z-form-message>
+      </z-form-field>
+
+      <z-form-field>
+        <label for="password" z-form-label zRequired>Password</label>
+        <z-form-control>
+          <input
+            id="password"
+            z-input
+            type="password"
+            placeholder="Create a password"
+            formControlName="password"
+          />
+        </z-form-control>
+        <z-form-message zType="default">Password must be at least 6 characters.</z-form-message>
+      </z-form-field>
+
+      <button z-button zType="default" type="submit">Submit</button>
+    </form>
+  </z-card>
+</div>

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AdminPage } from './admin-page/admin-page';
 import { Cart } from './cart/cart';
 import { Checkout } from './checkout/checkout';
 import { CourseList } from './course-list/course-list';
@@ -21,6 +22,10 @@ export const routes: Routes = [
   {
     path: 'checkout',
     component: Checkout,
+  },
+  {
+    path: 'admin',
+    component: AdminPage,
   },
   {
     path: '**',
