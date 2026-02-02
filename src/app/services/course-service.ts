@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from '../models/course.model';
@@ -7,7 +7,8 @@ import { Course } from '../models/course.model';
   providedIn: 'root',
 })
 export class CourseService {
-  private dataUrl = 'assets/data_full.json';
+  private dataUrl = 'http://localhost:3000/courses';
+  courses = httpResource(() => `${this.dataUrl}`);
 
   constructor(private http: HttpClient) {}
 
