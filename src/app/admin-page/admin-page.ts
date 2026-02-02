@@ -24,11 +24,6 @@ import { ZardInputDirective } from '@/shared/components/input';
 })
 export class AdminPage {
   profileForm = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(20),
-    ]),
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
