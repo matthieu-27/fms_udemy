@@ -1,9 +1,4 @@
-import {
-  provideHttpClient,
-  withFetch,
-  withJsonpSupport,
-  withNoXsrfProtection,
-} from '@angular/common/http';
+import { provideHttpClient, withFetch, withNoXsrfProtection } from '@angular/common/http';
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
@@ -14,7 +9,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    provideHttpClient(withNoXsrfProtection(), withFetch(), withJsonpSupport()),
+    provideHttpClient(withNoXsrfProtection(), withFetch()),
     provideZard(),
   ],
 };
