@@ -7,6 +7,7 @@ import { ZardFormImports } from '@/shared/components/form/form.imports';
 import { ZardInputDirective } from '@/shared/components/input';
 
 import { Roles, User as UserModel } from '@/models/user.model';
+import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-admin-page',
@@ -40,6 +41,9 @@ export class AdminPage {
   onSubmit() {
     console.log(this.profileForm.value);
     console.log(this.checkUser(this.profileForm.value.email!, this.profileForm.value.password!));
+    const salt = bcrypt.genSaltSync(10);
+    const hashPass = bcrypt.hashSync(this.profileForm.value.password!, salt);
+    console.log(hashPass);
   }
 
   /**
@@ -57,5 +61,9 @@ export class AdminPage {
       }
     }
     return false;
+  }
+
+  get emailControl() {
+    return this.profileForm.get('email')!;
   }
 }

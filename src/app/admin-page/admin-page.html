@@ -21,7 +21,13 @@
             formControlName="email"
           />
         </z-form-control>
-        <z-form-message zType="default">We'll use this for account notifications.</z-form-message>
+        @if (emailControl.hasError('required') && emailControl.touched) {
+          <z-form-message zType="error">Email is required.</z-form-message>
+        } @else if (emailControl.hasError('email') && emailControl.touched) {
+          <z-form-message zType="error">Please enter a valid email address.</z-form-message>
+        } @else {
+          <z-form-message>We'll never share your email.</z-form-message>
+        }
       </z-form-field>
 
       <z-form-field>
