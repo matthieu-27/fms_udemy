@@ -1,14 +1,5 @@
 <div class="min-h-[calc(100vh-5rem)] w-full flex flex-col gap-4 justify-center items-center">
-  @if (user()) {
-    <p>Bienvenue {{ user()?.email }}</p>
-  } @else {
-    <p>Bienvenu Inconnu !</p>
-  }
-  <z-card
-    class="w-full md:w-94"
-    zTitle="Login to your account"
-    zDescription="Enter your email below to login to your account"
-  >
+  <z-card class="w-full md:w-94">
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="max-w-sm space-y-6">
       <z-form-field>
         <label for="email" z-form-label zRequired>Email</label>
@@ -17,16 +8,18 @@
             id="email"
             z-input
             type="email"
-            placeholder="Enter your email"
+            placeholder="Entrez votre email"
             formControlName="email"
           />
         </z-form-control>
         @if (emailControl.hasError('required') && emailControl.touched) {
-          <z-form-message zType="error">Email is required.</z-form-message>
+          <z-form-message zType="error">L'email est requis.</z-form-message>
         } @else if (emailControl.hasError('email') && emailControl.touched) {
-          <z-form-message zType="error">Please enter a valid email address.</z-form-message>
+          <z-form-message zType="error">L'email entré n'est pas valide.</z-form-message>
         } @else {
-          <z-form-message>We'll never share your email.</z-form-message>
+          <z-form-message
+            >Nous ne partagerons jamais votre email, ayez confiance 😇.</z-form-message
+          >
         }
       </z-form-field>
 
@@ -37,14 +30,20 @@
             id="password"
             z-input
             type="password"
-            placeholder="Create a password"
+            placeholder="Entrez votre mot de passe"
             formControlName="password"
           />
         </z-form-control>
-        <z-form-message zType="default">Password must be at least 4 characters.</z-form-message>
+        <z-form-message zType="default"
+          >Le mot de passe doit faire minimum 4 caractères.
+        </z-form-message>
       </z-form-field>
-
-      <button z-button zType="default" type="submit">Submit</button>
+      <div class="flex gap-4">
+        <button z-button zType="default" type="submit" [disabled]="profileForm.invalid">
+          Submit
+        </button>
+        <button z-button zType="outline" (click)="resetForm()">Reset</button>
+      </div>
     </form>
   </z-card>
 </div>
