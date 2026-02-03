@@ -2,14 +2,14 @@
   "users": [
     {
       "email": "hugo@gmail.com",
-      "password": "1234",
+      "password": "927eda538a92dd17d6775f37d3af2db8ab3dd811e71999401bc1b26c49a0a8dbb7c8471cb1fc806105138ed52e68224611fb67f150e7aa10f7c5516056a71130",
       "roles": [
         "USER"
       ]
     },
     {
       "email": "elbab@gmail.com",
-      "password": "1234",
+      "password": "927eda538a92dd17d6775f37d3af2db8ab3dd811e71999401bc1b26c49a0a8dbb7c8471cb1fc806105138ed52e68224611fb67f150e7aa10f7c5516056a71130",
       "roles": [
         "ADMIN",
         "USER"
@@ -17,7 +17,7 @@
     },
     {
       "email": "test@gmail.com",
-      "password": "1234",
+      "password": "927eda538a92dd17d6775f37d3af2db8ab3dd811e71999401bc1b26c49a0a8dbb7c8471cb1fc806105138ed52e68224611fb67f150e7aa10f7c5516056a71130",
       "roles": [
         "USER",
         "CUSTOMER"

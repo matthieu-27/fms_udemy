@@ -1,7 +1,7 @@
 import { User as UserModel } from '@/models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import * as bcrypt from 'bcryptjs';
+import * as CryptoJS from 'crypto-js';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private dataUrl = 'http://localhost:3000/users';
-  private salt = bcrypt.genSaltSync(10);
   private users: UserModel[] = [];
 
   constructor(private http: HttpClient) {
@@ -22,6 +21,10 @@ export class UserService {
     return this.http.get<UserModel[]>(this.dataUrl);
   }
 
+  encrypt(text: string): string {
+    return CryptoJS.SHA3(text).toString();
+  }
+
   /**
    * Checks if user is in `users` table
    * @param email
@@ -29,7 +32,7 @@ export class UserService {
    */
   checkUser(email: string, password: string): boolean {
     for (const user of this.users) {
-      if (user.email == email && user.password == password) {
+      if (user.email == email && user.password === this.encrypt(password)) {
         return true;
       }
     }

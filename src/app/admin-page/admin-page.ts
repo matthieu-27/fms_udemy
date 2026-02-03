@@ -26,8 +26,6 @@ import { toast } from 'ngx-sonner';
   styleUrl: './admin-page.css',
 })
 export class AdminPage {
-  submitted = false;
-
   profileForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -37,14 +35,16 @@ export class AdminPage {
 
   onSubmit() {
     if (this.profileForm.valid) {
-      this.submitted = true;
+      console.log(this.userService.encrypt(this.profileForm.value.password!));
+
       if (
         !this.userService.checkUser(this.profileForm.value.email!, this.profileForm.value.password!)
       ) {
-        this.submitted = false;
         toast.error("Erreur d'identification", {
           description: "L'email ou le mot de passe sont incorrect",
         });
+      } else {
+        toast.success('Yesssss');
       }
     }
   }
@@ -61,6 +61,5 @@ export class AdminPage {
    */
   resetForm() {
     this.profileForm.reset();
-    this.submitted = false;
   }
 }
