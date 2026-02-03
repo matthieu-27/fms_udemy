@@ -1,10 +1,12 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, Component, model, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { ZardButtonComponent } from '@/shared/components/button';
 import { ZardCardComponent } from '@/shared/components/card';
 import { ZardFormImports } from '@/shared/components/form/form.imports';
 import { ZardInputDirective } from '@/shared/components/input';
+
+import { Roles, User as UserModel } from '@/models/user.model';
 
 @Component({
   selector: 'app-admin-page',
@@ -23,27 +25,37 @@ import { ZardInputDirective } from '@/shared/components/input';
   styleUrl: './admin-page.css',
 })
 export class AdminPage {
-  private users = [
-    { email: 'elbab@gmail.com', password: '1234', roles: ['ADMIN', 'USER'] },
-    { email: 'hugo@gmail.com', password: '1234', roles: ['USER'] },
+  private users: UserModel[] = [
+    { email: 'elbab@gmail.com', password: '1234', roles: Roles.Admin },
+    { email: 'hugo@gmail.com', password: '1234', roles: Roles.User },
+    { email: 'test@gmail.com', password: '1234', roles: Roles.Customer },
   ];
+  user = model<UserModel>();
 
   profileForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
 
   onSubmit() {
     console.log(this.profileForm.value);
-    console.log(this.isAdmin(this.profileForm.value.email!, this.profileForm.value.password!));
+    console.log(this.checkUser(this.profileForm.value.email!, this.profileForm.value.password!));
   }
 
-  isAdmin(email: string, password: string) {
-    this.users.forEach((user) => {
+  /**
+   * Checks if user is in `users` table
+   * @param email
+   * @param password
+   */
+  checkUser(email: string, password: string): boolean {
+    for (const user of this.users) {
       if (user.email == email && user.password == password) {
+        this.user.set(new UserModel(email, password, user.roles));
         return true;
+      } else {
+        this.user.set(undefined);
       }
-      return false;
-    });
+    }
+    return false;
   }
 }

@@ -1,4 +1,5 @@
-<div class="min-h-[calc(100vh-5rem)] w-full flex justify-center items-center">
+<div class="min-h-[calc(100vh-5rem)] w-full flex flex-col gap-4 justify-center items-center">
+  <h1>Bienvenue, {{ user()?.email || 'Inconnu' }}</h1>
   <z-card
     class="w-full md:w-94"
     zTitle="Login to your account"
@@ -30,7 +31,7 @@
             formControlName="password"
           />
         </z-form-control>
-        <z-form-message zType="default">Password must be at least 6 characters.</z-form-message>
+        <z-form-message zType="default">Password must be at least 4 characters.</z-form-message>
       </z-form-field>
 
       <button z-button zType="default" type="submit">Submit</button>
