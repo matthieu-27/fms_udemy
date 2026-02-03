@@ -1,4 +1,29 @@
 {
+  "users": [
+    {
+      "email": "hugo@gmail.com",
+      "password": "1234",
+      "roles": [
+        "USER"
+      ]
+    },
+    {
+      "email": "elbab@gmail.com",
+      "password": "1234",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ]
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "1234",
+      "roles": [
+        "USER",
+        "CUSTOMER"
+      ]
+    }
+  ],
   "courses": [
     {
       "id": 1,
