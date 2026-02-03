@@ -31,7 +31,7 @@ export class AdminPage {
     { email: 'hugo@gmail.com', password: '1234', roles: Roles.User },
     { email: 'test@gmail.com', password: '1234', roles: Roles.Customer },
   ];
-  user = model<UserModel | undefined>();
+  user = model<UserModel>();
 
   profileForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
