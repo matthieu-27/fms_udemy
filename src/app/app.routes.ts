@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AdminPage } from './admin-page/admin-page';
+import { ProfilePage } from './admin-page/profile-page/profile-page';
 import { Cart } from './cart/cart';
 import { Checkout } from './checkout/checkout';
 import { CourseList } from './course-list/course-list';
@@ -10,6 +11,7 @@ export const routes: Routes = [
   {
     path: '',
     component: Home,
+    pathMatch: 'full',
   },
   {
     path: 'courses',
@@ -26,6 +28,10 @@ export const routes: Routes = [
   {
     path: 'admin',
     component: AdminPage,
+  },
+  {
+    path: 'profile',
+    component: ProfilePage,
   },
   {
     path: '**',
