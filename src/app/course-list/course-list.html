@@ -1,5 +1,5 @@
 <div class="max-w-7xl mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold text-gray-800 mb-8">Nos Formations</h2>
+  <h2 class="text-3xl font-bold mb-8 text-primary-foreground">Nos Formations</h2>
 
   <app-search-bar
     [searchStr]="searchStr()"
@@ -9,7 +9,7 @@
     (maxPriceChange)="onMaxPriceChange($event)"
   ></app-search-bar>
 
-  <p class="text-gray-600 mb-6">{{ filteredCourses().length }} formation(s) trouvée(s)</p>
+  <p class="mb-6">{{ filteredCourses().length }} formation(s) trouvée(s)</p>
 
   @defer {
     <div class="flex flex-wrap gap-2 xl:gap-4 justify-between items-center">
