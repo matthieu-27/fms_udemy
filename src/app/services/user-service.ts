@@ -43,19 +43,16 @@ export class UserService {
     return false;
   }
 
+  /**
+   * Check if ADMIN is within roles array
+   * @param roles
+   * @returns
+   */
   isAdmin(roles: string[]) {
     if (roles.includes('ADMIN')) {
       this.isBigBoss.set(true);
       return true;
     }
     return false;
-  }
-
-  login() {
-    this.isLoggedIn.set(true);
-  }
-
-  logout() {
-    this.isLoggedIn.set(false);
   }
 }
