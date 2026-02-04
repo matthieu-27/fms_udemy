@@ -45,7 +45,10 @@ export class AdminPage {
         this.userService.checkUser(this.profileForm.value.email!, this.profileForm.value.password!)
       ) {
         console.log(this.userService.isLoggedIn());
-        toast.success('Yesssss');
+        toast.success('Identification réussie !', {
+          description:
+            "Bravo et merci d'avoir bien appuyé sur les bonnes touches dans le bon ordre",
+        });
         this.router.navigate(['profile']);
       } else {
         toast.error("Erreur d'identification", {

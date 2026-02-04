@@ -11,6 +11,7 @@ export class UserService {
   private dataUrl = 'http://localhost:3000/users';
   private users: UserModel[] = [];
   isLoggedIn = signal(false);
+  isBigBoss = signal(false);
 
   constructor(private http: HttpClient) {
     this.getUsers().subscribe((users) => {
@@ -35,8 +36,17 @@ export class UserService {
     for (const user of this.users) {
       if (user.email == email && user.password === this.encrypt(password)) {
         this.isLoggedIn.set(true);
+        this.isBigBoss.set(this.isAdmin(user.roles));
         return true;
       }
+    }
+    return false;
+  }
+
+  isAdmin(roles: string[]) {
+    if (roles.includes('ADMIN')) {
+      this.isBigBoss.set(true);
+      return true;
     }
     return false;
   }
