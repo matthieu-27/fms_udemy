@@ -6,5 +6,8 @@
     <a [routerLink]="['/courses']" class="cursor-pointer">Cours</a>
     <a [routerLink]="['/cart']" class="cursor-pointer">Panier</a>
     <a [routerLink]="['/admin']" class="cursor-pointer">Connection</a>
+    <button (click)="toggleTheme()">
+      <z-icon zType="dark-mode" />
+    </button>
   </nav>
 </div>
