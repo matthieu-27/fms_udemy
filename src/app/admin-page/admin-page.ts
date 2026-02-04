@@ -7,6 +7,7 @@ import { ZardFormImports } from '@/shared/components/form/form.imports';
 import { ZardInputDirective } from '@/shared/components/input';
 
 import { UserService } from '@/services/user-service';
+import { Router } from '@angular/router';
 import { toast } from 'ngx-sonner';
 
 @Component({
@@ -31,20 +32,25 @@ export class AdminPage {
     password: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private router: Router,
+  ) {}
 
   onSubmit() {
     if (this.profileForm.valid) {
       console.log(this.userService.encrypt(this.profileForm.value.password!));
 
       if (
-        !this.userService.checkUser(this.profileForm.value.email!, this.profileForm.value.password!)
+        this.userService.checkUser(this.profileForm.value.email!, this.profileForm.value.password!)
       ) {
+        console.log(this.userService.isLoggedIn());
+        toast.success('Yesssss');
+        this.router.navigate(['profile']);
+      } else {
         toast.error("Erreur d'identification", {
           description: "L'email ou le mot de passe sont incorrect",
         });
-      } else {
-        toast.success('Yesssss');
       }
     }
   }

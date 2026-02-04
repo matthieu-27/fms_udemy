@@ -1,6 +1,6 @@
 import { User as UserModel } from '@/models/user.model';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
 import { Observable } from 'rxjs';
 
@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   private dataUrl = 'http://localhost:3000/users';
   private users: UserModel[] = [];
+  isLoggedIn = signal(false);
 
   constructor(private http: HttpClient) {
     this.getUsers().subscribe((users) => {
@@ -26,16 +27,25 @@ export class UserService {
   }
 
   /**
-   * Checks if user is in `users` table
+   * Checks if user is in `users` table and if he is an admin
    * @param email
    * @param password
    */
   checkUser(email: string, password: string): boolean {
     for (const user of this.users) {
       if (user.email == email && user.password === this.encrypt(password)) {
+        this.isLoggedIn.set(true);
         return true;
       }
     }
     return false;
+  }
+
+  login() {
+    this.isLoggedIn.set(true);
+  }
+
+  logout() {
+    this.isLoggedIn.set(false);
   }
 }

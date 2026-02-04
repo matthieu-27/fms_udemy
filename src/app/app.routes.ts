@@ -4,6 +4,7 @@ import { ProfilePage } from './admin-page/profile-page/profile-page';
 import { Cart } from './cart/cart';
 import { Checkout } from './checkout/checkout';
 import { CourseList } from './course-list/course-list';
+import { authGuard } from './guards/auth-guard';
 import { Home } from './home/home';
 import { PageNotFound } from './page-not-found/page-not-found';
 
@@ -31,6 +32,7 @@ export const routes: Routes = [
   },
   {
     path: 'profile',
+    canActivate: [authGuard],
     component: ProfilePage,
   },
   {
