@@ -1,8 +1,5 @@
-import { ZardButtonComponent } from '@/shared/components/button';
 import { ZardCardComponent } from '@/shared/components/card';
 import { ZardFormImports } from '@/shared/components/form';
-import { ZardInputDirective } from '@/shared/components/input';
-import { ZardIdDirective } from '@/shared/core';
 import { CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -10,15 +7,7 @@ import { CartService } from '../services/cart-service';
 
 @Component({
   selector: 'app-checkout',
-  imports: [
-    ReactiveFormsModule,
-    CurrencyPipe,
-    ZardCardComponent,
-    ZardButtonComponent,
-    ZardInputDirective,
-    ZardFormImports,
-    ZardIdDirective,
-  ],
+  imports: [ReactiveFormsModule, CurrencyPipe, ZardCardComponent, ZardFormImports],
   templateUrl: './checkout.html',
   styleUrl: './checkout.css',
 })
