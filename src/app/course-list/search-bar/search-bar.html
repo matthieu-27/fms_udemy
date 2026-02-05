@@ -1,22 +1,14 @@
-<div class="flex items-center mb-5 relative justify-between w-full">
-  <div class="max-w-md relative w-full h-full">
+<div class="flex items-center relative justify-between w-full">
+  <z-input-group [zAddonBefore]="search" [zAddonAfter]="closeSearch" class="mb-4">
     <input
+      z-input
+      placeholder="Search..."
       type="text"
       [(ngModel)]="searchStr"
       (input)="onSearchChange($event)"
-      placeholder="Rechercher une formation..."
-      class="w-full max-w-md px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+      class="focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
     />
-    @if (searchStr().length > 0) {
-      <button
-        (click)="clearSearch()"
-        class="absolute right-3 text-xl font-bold top-1"
-        title="Effacer la recherche"
-      >
-        ×
-      </button>
-    }
-  </div>
+  </z-input-group>
   <div>
     <select
       (change)="onCategoryChange($event)"
@@ -51,3 +43,12 @@
     </button>
   </div>
 </div>
+<ng-template #search><z-icon zType="search" /></ng-template>
+<ng-template #closeSearch>
+  @if (filteredCourses.length > 1) {
+    {{ filteredCourses.length.toString() }} résultats
+  } @else {
+    {{ filteredCourses.length.toString() }} résultat
+  }
+  <z-icon zType="x" />
+</ng-template>

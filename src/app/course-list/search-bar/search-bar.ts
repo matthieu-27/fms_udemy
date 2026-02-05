@@ -1,3 +1,7 @@
+import { ZardButtonComponent } from '@/shared/components/button';
+import { ZardIconComponent } from '@/shared/components/icon';
+import { ZardInputDirective } from '@/shared/components/input';
+import { ZardInputGroupComponent } from '@/shared/components/input-group';
 import { Component, Input, model, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Course } from '../../models/course.model';
@@ -6,7 +10,13 @@ import { CartService } from '../../services/cart-service';
 @Component({
   selector: 'app-search-bar',
   standalone: true,
-  imports: [FormsModule],
+  imports: [
+    FormsModule,
+    ZardButtonComponent,
+    ZardIconComponent,
+    ZardInputDirective,
+    ZardInputGroupComponent,
+  ],
   templateUrl: './search-bar.html',
   styleUrl: './search-bar.css',
 })
