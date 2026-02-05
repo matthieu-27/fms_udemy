@@ -5,6 +5,7 @@ import { ZardInputGroupComponent } from '@/shared/components/input-group';
 import { ZardSelectImports } from '@/shared/components/select';
 import { Component, Input, model, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { toast } from 'ngx-sonner';
 import { Course } from '../../models/course.model';
 import { CartService } from '../../services/cart-service';
 
@@ -63,7 +64,9 @@ export class SearchBar {
   // Méthode pour ajouter toutes les formations filtrées au panier
   addAllToCart() {
     if (this.filteredCourses.length === 0) {
-      alert('Aucune formation trouvée à ajouter au panier.');
+      toast.error('Aucune formation trouvée à ajouter au panier.', {
+        description: "Il faut qu'il y ait affiché au moins une formation 😉",
+      });
       return;
     }
 
@@ -71,6 +74,8 @@ export class SearchBar {
       this.cartService.addToCart(course);
     });
 
-    alert(`${this.filteredCourses.length} formation(s) ajoutée(s) au panier !`);
+    toast.success(`${this.filteredCourses.length} formation(s) ajoutée(s) au panier !`, {
+      description: 'Merci, vous ne le regretterez pas ! 😄',
+    });
   }
 }
