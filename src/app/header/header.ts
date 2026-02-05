@@ -1,4 +1,5 @@
 import { UserService } from '@/services/user-service';
+import { ZardButtonComponent } from '@/shared/components/button';
 import { ZardIconComponent } from '@/shared/components/icon';
 import { NgOptimizedImage } from '@angular/common';
 import { Component, computed, Renderer2, signal } from '@angular/core';
@@ -6,7 +7,7 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, NgOptimizedImage, ZardIconComponent],
+  imports: [RouterLink, NgOptimizedImage, ZardIconComponent, ZardButtonComponent],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })

@@ -2,10 +2,18 @@
   <a [routerLink]="['/']" class="">
     <img ngSrc="udemy.png" alt="Udemy" width="512" height="191" class="w-1/4 h-auto" priority />
   </a>
-  <nav class="flex gap-4 font-bold text-xl">
-    <a [routerLink]="['/courses']" class="cursor-pointer">Cours</a>
-    <a [routerLink]="['/cart']" class="cursor-pointer">Panier</a>
-    <a [routerLink]="['/admin']" class="cursor-pointer">Connection</a>
+  <nav class="flex gap-2 font-bold text-xl">
+    <button z-button zType="ghost">
+      <a [routerLink]="['/courses']" class="cursor-pointer">Cours</a>
+    </button>
+    <button z-button zType="link">
+      <z-icon zType="popcorn">
+        <a [routerLink]="['/cart']" class="cursor-pointer">Panier</a>
+      </z-icon>
+    </button>
+    <button z-button zType="default">
+      <a [routerLink]="['/admin']" class="cursor-pointer">Connection</a>
+    </button>
     <button (click)="toggleTheme()">
       <z-icon zType="dark-mode" />
     </button>
