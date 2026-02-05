@@ -1,16 +1,11 @@
 <z-card
-  class="w-full md:w-fit h-50 flex flex-col justify-between"
+  class="w-full md:w-70 h-50 flex flex-col justify-between"
   [zTitle]="course.name"
   [zDescription]="course.description"
 >
   <div class="flex justify-between items-center gap-4">
-    <span class="text-lg font-bold text-purple-600">{{ course.price | currency: 'EUR' }}</span>
-    <button
-      z-button
-      zType="default"
-      class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200"
-      (click)="addToCart()"
-    >
+    <span class="text-lg font-bold">{{ course.price | currency: 'EUR' }}</span>
+    <button z-button zType="default" class="" (click)="addToCart()">
       Ajouter au panier
       <z-icon zType="check" />
     </button>
