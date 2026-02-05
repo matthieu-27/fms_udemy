@@ -1,48 +1,41 @@
-<div class="flex items-center relative justify-between w-full">
-  <z-input-group [zAddonBefore]="search" [zAddonAfter]="closeSearch" class="mb-4">
+<div class="flex items-center relative justify-between w-full my-4 gap-4">
+  <z-input-group [zAddonBefore]="search" [zAddonAfter]="closeSearch" class="w-90">
     <input
       z-input
-      placeholder="Search..."
+      placeholder="Recherche..."
       type="text"
       [(ngModel)]="searchStr"
       (input)="onSearchChange($event)"
-      class="focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
     />
   </z-input-group>
-  <div>
-    <select
-      (change)="onCategoryChange($event)"
-      class="px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all"
+
+  <input
+    z-input
+    type="number"
+    placeholder="Prix max"
+    (input)="onMaxPriceChange($event)"
+    placeholder="Prix max"
+    class="w-90"
+  />
+
+  <z-select (change)="onCategoryChange($event)" class="w-90">
+    <z-select-item zValue="all">Toutes les catégories</z-select-item>
+    <z-select-item zValue="Développement Web">Développement Web</z-select-item>
+    <z-select-item zValue="Développement Mobile">Développement Mobile</z-select-item>
+    <z-select-item zValue="Data Science & IA">Data Science & IA</z-select-item>
+    <z-select-item zValue="Cloud & DevOps">Cloud & DevOps</z-select-item>
+    <z-select-item zValue="Langages de Programmation">Langages de Programmation</z-select-item>
+    <z-select-item zValue="Cybersécurité">Cybersécurité</z-select-item>
+    <z-select-item zValue="Bases de Données & Algorithmes"
+      >Bases de Données & Algorithmes</z-select-item
     >
-      <option value="all">Toutes les catégories</option>
-      <option value="Développement Web">Développement Web</option>
-      <option value="Développement Mobile">Développement Mobile</option>
-      <option value="Data Science & IA">Data Science & IA</option>
-      <option value="Cloud & DevOps">Cloud & DevOps</option>
-      <option value="Langages de Programmation">Langages de Programmation</option>
-      <option value="Cybersécurité">Cybersécurité</option>
-      <option value="Bases de Données & Algorithmes">Bases de Données & Algorithmes</option>
-      <option value="Autres">Autres</option>
-    </select>
-  </div>
-  <div>
-    <input
-      type="number"
-      (input)="onMaxPriceChange($event)"
-      placeholder="Prix max"
-      class="px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all w-32"
-    />
-  </div>
-  <div>
-    <button
-      (click)="addAllToCart()"
-      class="mt-2 bg-white text-purple-700 px-4 py-2 rounded-lg hover:ring-1 hover:ring-purple-700 transition-colors duration-200 text-sm w-full"
-      title="Ajouter toutes les formations trouvées au panier"
-    >
-      Ajouter toutes les formations filtrées au panier
-    </button>
-  </div>
+    <z-select-item zValue="Autres">Autres</z-select-item>
+  </z-select>
+  <z-button (click)="addAllToCart()" title="Ajouter toutes les formations trouvées au panier">
+    <z-icon zType="plus" />
+  </z-button>
 </div>
+
 <ng-template #search><z-icon zType="search" /></ng-template>
 <ng-template #closeSearch>
   @if (filteredCourses.length > 1) {
@@ -50,5 +43,7 @@
   } @else {
     {{ filteredCourses.length.toString() }} résultat
   }
-  <z-icon zType="x" />
+  <z-button zType="ghost">
+    <z-icon zType="x" />
+  </z-button>
 </ng-template>

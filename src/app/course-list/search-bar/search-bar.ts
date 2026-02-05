@@ -2,6 +2,7 @@ import { ZardButtonComponent } from '@/shared/components/button';
 import { ZardIconComponent } from '@/shared/components/icon';
 import { ZardInputDirective } from '@/shared/components/input';
 import { ZardInputGroupComponent } from '@/shared/components/input-group';
+import { ZardSelectImports } from '@/shared/components/select';
 import { Component, Input, model, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Course } from '../../models/course.model';
@@ -16,6 +17,7 @@ import { CartService } from '../../services/cart-service';
     ZardIconComponent,
     ZardInputDirective,
     ZardInputGroupComponent,
+    ZardSelectImports,
   ],
   templateUrl: './search-bar.html',
   styleUrl: './search-bar.css',
