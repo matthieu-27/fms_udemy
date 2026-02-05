@@ -1,6 +1,4 @@
-<div class="max-w-7xl mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold mb-8 text-primary-foreground">Nos Formations</h2>
-
+<div class="max-w-7xl mx-auto px-4">
   <app-search-bar
     [searchStr]="searchStr()"
     [filteredCourses]="filteredCourses()"
@@ -9,10 +7,10 @@
     (maxPriceChange)="onMaxPriceChange($event)"
   ></app-search-bar>
 
-  <p class="mb-6">{{ filteredCourses().length }} formation(s) trouvée(s)</p>
-
   @defer {
-    <div class="flex flex-wrap gap-2 xl:gap-4 justify-between items-center">
+    <div
+      class="flex flex-wrap gap-2 xl:gap-4 justify-center md:justify-between items-center w-full"
+    >
       @for (course of filteredCourses(); track course.id) {
         <app-course [course]="course"></app-course>
       }
