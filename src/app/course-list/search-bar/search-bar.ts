@@ -26,6 +26,7 @@ import { CartService } from '../../services/cart-service';
 export class SearchBar {
   searchStr = model('');
   searchStrChange = output<string>();
+  selectedCategory = 'all';
 
   // todo : trouver le moyen d'utiliser un signal pour filteredCourses
   @Input() filteredCourses: Course[] = [];
@@ -44,9 +45,8 @@ export class SearchBar {
   }
 
   // Méthode pour gérer le changement de catégorie
-  onCategoryChange(event: Event) {
-    const select = event.target as HTMLSelectElement;
-    this.categoryChange.emit(select.value);
+  onCategoryChange() {
+    this.categoryChange.emit(this.selectedCategory);
   }
 
   // Méthode pour gérer le changement de prix maximum

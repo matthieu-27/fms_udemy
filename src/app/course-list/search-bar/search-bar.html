@@ -18,7 +18,7 @@
     class="w-90"
   />
 
-  <z-select (change)="onCategoryChange($event)" class="w-90">
+  <z-select [(zValue)]="selectedCategory" (click)="onCategoryChange()" class="w-90">
     <z-select-item zValue="all">Toutes les catégories</z-select-item>
     <z-select-item zValue="Développement Web">Développement Web</z-select-item>
     <z-select-item zValue="Développement Mobile">Développement Mobile</z-select-item>
@@ -43,7 +43,7 @@
   } @else {
     {{ filteredCourses.length.toString() }} résultat
   }
-  <z-button zType="ghost">
+  <z-button zType="link" (click)="clearSearch()">
     <z-icon zType="x" />
   </z-button>
 </ng-template>
