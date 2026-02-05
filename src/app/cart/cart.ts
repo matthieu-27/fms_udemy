@@ -1,3 +1,6 @@
+import { ZardButtonComponent } from '@/shared/components/button';
+import { ZardCardComponent } from '@/shared/components/card';
+import { ZardIconComponent } from '@/shared/components/icon';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -7,7 +10,14 @@ import { CartService } from '../services/cart-service';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, CurrencyPipe, RouterLink],
+  imports: [
+    CommonModule,
+    CurrencyPipe,
+    ZardCardComponent,
+    ZardButtonComponent,
+    ZardIconComponent,
+    RouterLink,
+  ],
   templateUrl: './cart.html',
   styleUrl: './cart.css',
 })

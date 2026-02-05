@@ -1,60 +1,40 @@
-<div class="container mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold mb-8">Votre Panier</h2>
+<div class="max-w-7xl mx-auto px-4 py-8">
   @if (cartItems.length > 0) {
-    <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+    <z-card
+      class="w-full"
+      zTitle="Votre Panier"
+      zDescription="Découvrez les magnifiques formations que vous allez acheter"
+    >
       <div class="space-y-4">
         @for (item of cartItems; track item.course.id) {
-          <div class="flex items-center justify-between p-4 border-b border-gray-100">
+          <div class="flex items-center justify-between p-4 border-b">
             <div class="flex-1">
               <h3 class="font-semibold">{{ item.course.name }}</h3>
               <p class="text-sm">{{ item.course.description }}</p>
             </div>
             <div class="flex items-center gap-4">
-              <span class="font-bold text-purple-600">{{
-                item.course.price | currency: 'EUR'
-              }}</span>
+              <span class="font-bold text-primary">{{ item.course.price | currency: 'EUR' }}</span>
               <span class="">x{{ item.quantity }}</span>
-              <button
-                (click)="removeItem(item)"
-                class="text-red-500 hover:text-red-700 transition-colors"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  />
-                </svg>
-              </button>
+              <z-button zType="destructive" (click)="removeItem(item)" class="transition-colors">
+                <z-icon zType="x" />
+              </z-button>
             </div>
           </div>
         }
       </div>
+      <div class="w-full justify-end flex px-4 py-4">
+        <p class="text-xl font-bold font-sans">Total: {{ total | currency: 'EUR' }}</p>
+      </div>
+      <div class="flex justify-between items-center">
+        <z-button zType="outline" (click)="clearCart()">Vider le panier</z-button>
 
-      <div class="flex justify-between items-center mt-8">
-        <button
-          (click)="clearCart()"
-          class="bg-gray-200 px-6 py-2 rounded-lg hover:bg-gray-300 transition-colors"
-        >
-          Vider le panier
-        </button>
-        <div class="text-right">
-          <p class="text-xl font-bold">Total: {{ total | currency: 'EUR' }}</p>
-          <button
-            class="mt-2 bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors font-semibold"
-          >
+        <div>
+          <z-button zType="default">
             <a [routerLink]="['/checkout']">Passer à la caisse</a>
-          </button>
+          </z-button>
         </div>
       </div>
-    </div>
+    </z-card>
   } @else {
     <div class="text-center py-12">
       <p class="text-lg">Votre panier est vide</p>
