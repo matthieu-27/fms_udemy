@@ -18,4 +18,8 @@ export class CourseService {
   addCourse(course: Course) {
     return this.http.post<Course>(this.dataUrl, course);
   }
+
+  updateCourse(course: Course) {
+    return this.http.patch<Course>(this.dataUrl, course);
+  }
 }

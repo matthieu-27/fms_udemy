@@ -1,8 +1,20 @@
 <z-card
-  class="w-full md:w-65 h-50 flex flex-col justify-between"
+  id="dialogcard"
+  class="w-full md:w-65 h-50 flex flex-col justify-between relative"
   [zTitle]="course.name"
   [zDescription]="course.description"
 >
+  @if (isBigBoss()) {
+    <button
+      type="button"
+      z-button
+      zType="link"
+      (click)="openDialog()"
+      class="absolute top-2 right-2"
+    >
+      <z-icon zType="ellipsis" />
+    </button>
+  }
   <div class="flex justify-between items-center gap-4">
     <span class="text-lg font-bold">{{ course.price | currency: 'EUR' }}</span>
     <button z-button zType="default" class="" (click)="addToCart()">
