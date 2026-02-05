@@ -49,7 +49,7 @@ export class AdminPage {
           description:
             "Bravo et merci d'avoir bien appuyé sur les bonnes touches dans le bon ordre",
         });
-        this.router.navigate(['profile']);
+        this.router.navigate(['checkout']);
       } else {
         toast.error("Erreur d'identification", {
           description: "L'email ou le mot de passe sont incorrect",
