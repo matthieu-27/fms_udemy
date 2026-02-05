@@ -1,20 +1,25 @@
 <div class="max-w-7xl mx-auto flex items-center justify-between h-full px-4 py-8">
   <a [routerLink]="['/']" class="">
-    <img ngSrc="udemy.png" alt="Udemy" width="512" height="191" class="w-1/4 h-auto" priority />
+    <img
+      ngSrc="udemy.png"
+      alt="Udemy"
+      width="512"
+      height="191"
+      class="w-1/4 h-auto dark:invert"
+      priority
+    />
   </a>
-  <nav class="flex gap-2 font-bold text-xl">
-    <button z-button zType="ghost">
+  <nav class="flex gap-2">
+    <button z-button zType="outline">
       <a [routerLink]="['/courses']" class="cursor-pointer">Cours</a>
     </button>
-    <button z-button zType="link">
-      <z-icon zType="popcorn">
-        <a [routerLink]="['/cart']" class="cursor-pointer">Panier</a>
-      </z-icon>
+    <button z-button zType="outline">
+      <a [routerLink]="['/cart']" class="cursor-pointer">Panier</a>
     </button>
     <button z-button zType="default">
       <a [routerLink]="['/admin']" class="cursor-pointer">Connection</a>
     </button>
-    <button (click)="toggleTheme()">
+    <button z-button zType="link" (click)="toggleTheme()">
       <z-icon zType="dark-mode" />
     </button>
   </nav>
