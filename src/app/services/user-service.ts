@@ -1,22 +1,46 @@
 import { User as UserModel } from '@/models/user.model';
 import { HttpClient } from '@angular/common/http';
-import { Injectable, signal } from '@angular/core';
+import { ErrorHandler, Injectable, signal } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class UserService implements ErrorHandler {
   private dataUrl = 'http://localhost:3000/users';
   private users: UserModel[] = [];
+  private user: UserModel = new UserModel('', '', ['']);
+  private userSubject = new BehaviorSubject<UserModel>(this.user);
+  user$ = this.userSubject.asObservable();
+  private readonly USER_STORAGE_KEY = 'fms_udemy_user';
   isLoggedIn = signal(false);
-  isBigBoss = signal(false);
+  isBigBoss = signal(this.isAdmin(this.user.roles));
 
   constructor(private http: HttpClient) {
     this.getUsers().subscribe((users) => {
       this.users = users;
     });
+
+    // Charger un user depuis le localStorage
+    this.loadUserFromLocalStorage();
+  }
+
+  // Méthode pour charger le panier depuis le localStorage
+  private loadUserFromLocalStorage(): void {
+    const userData = localStorage.getItem(this.USER_STORAGE_KEY);
+    if (userData) {
+      try {
+        this.user = JSON.parse(userData);
+        this.userSubject.next(this.user);
+      } catch (error) {
+        this.handleError(error);
+      }
+    }
+  }
+
+  handleError(error: any): void {
+    console.error("Erreur lors du chargement de l'user depuis localStorage:", error);
   }
 
   getUsers(): Observable<UserModel[]> {
