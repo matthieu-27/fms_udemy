@@ -32,6 +32,8 @@ export class UserService implements ErrorHandler {
     if (userData) {
       try {
         this.user = JSON.parse(userData);
+        this.isLoggedIn.set(true);
+        this.isBigBoss.set(this.isAdmin(this.user.roles));
         this.userSubject.next(this.user);
       } catch (error) {
         this.handleError(error);
@@ -39,8 +41,16 @@ export class UserService implements ErrorHandler {
     }
   }
 
+  private saveUserToLocalStorage(): void {
+    try {
+      localStorage.setItem(this.USER_STORAGE_KEY, JSON.stringify(this.user));
+    } catch (error) {
+      console.error("Erreur lors de la sauvegarde de l'utilisateur dans localStorage:", error);
+    }
+  }
+
   handleError(error: any): void {
-    console.error("Erreur lors du chargement de l'user depuis localStorage:", error);
+    console.error("Erreur lors du chargement de l'utilisateur depuis localStorage:", error);
   }
 
   getUsers(): Observable<UserModel[]> {
@@ -59,8 +69,7 @@ export class UserService implements ErrorHandler {
   checkUser(email: string, password: string): boolean {
     for (const user of this.users) {
       if (user.email == email && user.password === this.encrypt(password)) {
-        this.isLoggedIn.set(true);
-        this.isBigBoss.set(this.isAdmin(user.roles));
+        this.login(user);
         return true;
       }
     }
@@ -78,5 +87,22 @@ export class UserService implements ErrorHandler {
       return true;
     }
     return false;
+  }
+
+  login(user: UserModel) {
+    const newUser = new UserModel(user.email, user.password, user.roles);
+    this.user = newUser;
+    this.userSubject.next(this.user);
+    this.isLoggedIn.set(true);
+    this.isBigBoss.set(this.isAdmin(newUser.roles));
+    this.saveUserToLocalStorage();
+  }
+
+  logout() {
+    localStorage.removeItem(this.USER_STORAGE_KEY);
+    this.user = new UserModel('', '', ['']);
+    this.userSubject.next(this.user);
+    this.isLoggedIn.set(false);
+    this.isBigBoss.set(false);
   }
 }
