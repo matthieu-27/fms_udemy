@@ -1,7 +1,7 @@
 import { Course as CourseModel } from '@/models/course.model';
 import { CourseService } from '@/services/course-service';
 import { UserService } from '@/services/user-service';
-import { Component, inject, input, signal } from '@angular/core';
+import { Component, inject, model, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,14 +13,19 @@ import { ActivatedRoute } from '@angular/router';
 export class ProfilePage {
   private activatedRoute = inject(ActivatedRoute);
   isAdmin = signal(false);
-  course = input<CourseModel>();
+  course = model<CourseModel>();
+  id = 0;
 
   constructor(
     private userService: UserService,
     private courseService: CourseService,
   ) {
     this.isAdmin.set(this.userService.isBigBoss());
-
-    console.log(this.activatedRoute);
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = +params['id']; // permet d'avoir type number
+    });
+    this.courseService.getCourseById(this.id).subscribe((course) => {
+      this.course.set(course);
+    });
   }
 }
