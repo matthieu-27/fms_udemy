@@ -2,7 +2,7 @@ import { UserService } from '@/services/user-service';
 import { ZardButtonComponent } from '@/shared/components/button';
 import { ZardIconComponent } from '@/shared/components/icon';
 import { NgOptimizedImage } from '@angular/common';
-import { Component, computed, Renderer2, signal } from '@angular/core';
+import { Component, computed, effect, Renderer2, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -21,7 +21,13 @@ export class Header {
   constructor(
     private userService: UserService,
     private renderer: Renderer2,
-  ) {}
+  ) {
+    effect(() => {
+      this.userService.user$.subscribe((user) => {
+        this.isLoggedIn.set(this.userService.isLoggedIn());
+      });
+    });
+  }
 
   toggleTheme() {
     if (this.theme() == 'light') {
@@ -31,5 +37,10 @@ export class Header {
       this.renderer.removeClass(document.body.parentElement, 'dark');
       this.theme.set('light');
     }
+  }
+
+  logout() {
+    this.userService.logout();
+    this.isLoggedIn.set(false);
   }
 }

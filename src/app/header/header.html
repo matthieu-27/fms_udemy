@@ -16,9 +16,13 @@
     <button z-button zType="outline">
       <a [routerLink]="['/cart']" class="cursor-pointer">Panier</a>
     </button>
-    <button z-button zType="default">
-      <a [routerLink]="['/admin']" class="cursor-pointer">Connection</a>
-    </button>
+    @if (!isLoggedIn()) {
+      <button z-button zType="default">
+        <a [routerLink]="['/admin']" class="cursor-pointer">Connection</a>
+      </button>
+    } @else {
+      <button z-button zType="default" (click)="logout()">Déconnection</button>
+    }
     <button z-button zType="link" (click)="toggleTheme()">
       <z-icon zType="dark-mode" />
     </button>
