@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProfilePage {
   private activatedRoute = inject(ActivatedRoute);
   isAdmin = signal(false);
-  course = input.required<CourseModel>();
+  course = input<CourseModel>();
 
   constructor(
     private userService: UserService,
