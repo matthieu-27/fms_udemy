@@ -49,7 +49,7 @@ export class Course {
   }
 
   edit(id: number) {
-    this.router.navigateByUrl('edit/' + id);
+    this.router.navigateByUrl('adminpage/' + id);
   }
 
   showDialog() {
