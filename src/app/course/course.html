@@ -1,10 +1,48 @@
 <z-card
-  class="w-full md:w-65 h-50 flex flex-col justify-between"
-  [zTitle]="course.name"
-  [zDescription]="course.description"
+  class="w-full md:w-65 h-50 flex flex-col justify-between relative"
+  [zTitle]="course().name"
+  [zDescription]="course().description"
 >
+  @if (isBigBoss()) {
+    <button
+      type="button"
+      z-button
+      zType="ghost"
+      z-menu
+      zTrigger="hover"
+      [zMenuTriggerFor]="resourcesMenu"
+      class="absolute top-3 right-2"
+    >
+      <z-icon zType="chevron-down" />
+    </button>
+
+    <ng-template #resourcesMenu>
+      <div z-menu-content class="w-56 space-y-2">
+        <button
+          z-button
+          zType="default"
+          z-menu-item
+          class="hover:text-background hover:bg-primary"
+          (click)="edit(course().id)"
+        >
+          <z-icon zType="file-text" class="mr-2" />
+          Edit
+        </button>
+
+        <button
+          z-button
+          zType="destructive"
+          class="hover:text-background hover:bg-destructive"
+          z-menu-item
+          (click)="showDialog()"
+        >
+          <z-icon zType="trash" /> Delete
+        </button>
+      </div>
+    </ng-template>
+  }
   <div class="flex justify-between items-center gap-4">
-    <span class="text-lg font-bold">{{ course.price | currency: 'EUR' }}</span>
+    <span class="text-lg font-bold">{{ course().price | currency: 'EUR' }}</span>
     <button z-button zType="default" class="" (click)="addToCart()">
       Ajouter au panier
       <z-icon zType="plus" />
