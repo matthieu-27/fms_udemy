@@ -18,4 +18,19 @@ export class CourseService {
   addCourse(course: Course) {
     return this.http.post<Course>(this.dataUrl, course);
   }
+
+  getCourseById(id: number) {
+    return this.http.get<Course>(this.dataUrl + '/' + id);
+  }
+
+  deleteCourseById(id: number) {
+    return this.http.delete<Course>(this.dataUrl + '/' + id, { observe: 'response' }).subscribe({
+      next: (res) => {
+        if (res.status === 200) {
+          return true;
+        }
+        return false;
+      },
+    });
+  }
 }
