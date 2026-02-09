@@ -92,6 +92,10 @@ export class CartService implements ErrorHandler {
     this.saveCartToLocalStorage();
   }
 
+  calculateTotal() {
+    return this.items.reduce((sum, item) => sum + item.course.price * item.quantity, 0);
+  }
+
   getCartItems(): CartItem[] {
     return [...this.items];
   }

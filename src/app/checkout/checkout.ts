@@ -3,6 +3,7 @@ import { ZardFormImports } from '@/shared/components/form';
 import { CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { toast } from 'ngx-sonner';
 import { CartService } from '../services/cart-service';
 
 @Component({
@@ -30,7 +31,7 @@ export class Checkout {
     // Récupérer les données du panier
     this.cartService.cartItems$.subscribe((items) => {
       this.cartItems = items;
-      this.total = this.cartService.getTotal();
+      this.total = this.cartService.calculateTotal();
     });
   }
 
@@ -43,7 +44,9 @@ export class Checkout {
         date: new Date(),
       };
 
-      console.log('Commande validée:', orderData);
+      toast.success('Commande validée:', {
+        description: orderData.items.toString() + '',
+      });
       alert('Commande validée avec succès!');
     } else {
       alert('Veuillez remplir tous les champs correctement.');
