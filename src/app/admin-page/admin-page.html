@@ -38,6 +38,21 @@
           >Le mot de passe doit faire minimum 4 caractères.
         </z-form-message>
       </z-form-field>
+      <z-form-field>
+        <z-form-control
+          [errorMessage]="
+            isFieldInvalid('terms') ? 'Vous devez accepter les termes et condtions' : ''
+          "
+          class="flex flex-col"
+        >
+          <div class="flex items-center space-x-2">
+            <z-checkbox id="terms" formControlName="terms" />
+            <label z-form-label class="mb-0!" zRequired for="terms"
+              >J'accepte les termes et conditions
+            </label>
+          </div>
+        </z-form-control>
+      </z-form-field>
       <div class="flex gap-4">
         <button z-button zType="default" type="submit" [disabled]="profileForm.invalid">
           Submit

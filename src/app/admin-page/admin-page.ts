@@ -1,14 +1,27 @@
-import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-
-import { ZardButtonComponent } from '@/shared/components/button';
-import { ZardCardComponent } from '@/shared/components/card';
-import { ZardFormImports } from '@/shared/components/form/form.imports';
-import { ZardInputDirective } from '@/shared/components/input';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  inject,
+  signal,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { UserService } from '@/services/user-service';
+import { ZardButtonComponent } from '@/shared/components/button';
+import { ZardCardComponent } from '@/shared/components/card';
+import { ZardCheckboxComponent } from '@/shared/components/checkbox';
+import { ZardFormImports } from '@/shared/components/form/form.imports';
+import { ZardInputDirective } from '@/shared/components/input';
 import { Router } from '@angular/router';
 import { toast } from 'ngx-sonner';
+
+interface FormData {
+  email: string;
+  password: string;
+  terms: boolean;
+}
 
 @Component({
   selector: 'app-admin-page',
@@ -18,8 +31,8 @@ import { toast } from 'ngx-sonner';
     ZardInputDirective,
     ZardFormImports,
     ZardCardComponent,
+    ZardCheckboxComponent,
     ZardButtonComponent,
-    // ZardIdDirective,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
@@ -27,9 +40,15 @@ import { toast } from 'ngx-sonner';
   styleUrl: './admin-page.css',
 })
 export class AdminPage {
-  profileForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(3)]),
+  private readonly fb = inject(FormBuilder);
+  private readonly destroyRef = inject(DestroyRef);
+  readonly showSuccess = signal(false);
+  readonly isSubmitting = signal(false);
+
+  readonly profileForm = this.fb.nonNullable.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(3)]],
+    terms: [false, Validators.requiredTrue],
   });
 
   constructor(
@@ -56,6 +75,11 @@ export class AdminPage {
         });
       }
     }
+  }
+
+  isFieldInvalid(fieldName: keyof FormData): boolean {
+    const field = this.profileForm.get(fieldName);
+    return !!(field?.invalid && (field?.dirty || field?.touched));
   }
 
   /**
