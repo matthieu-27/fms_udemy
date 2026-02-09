@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  DestroyRef,
   inject,
   signal,
   ViewEncapsulation,
@@ -41,7 +40,6 @@ interface FormData {
 })
 export class AdminPage {
   private readonly fb = inject(FormBuilder);
-  private readonly destroyRef = inject(DestroyRef);
   readonly showSuccess = signal(false);
   readonly isSubmitting = signal(false);
 
@@ -57,9 +55,10 @@ export class AdminPage {
   ) {}
 
   onSubmit() {
-    if (this.profileForm.valid) {
-      console.log(this.userService.encrypt(this.profileForm.value.password!));
-
+    if (this.profileForm.invalid) {
+      this.profileForm.markAllAsTouched();
+      return;
+    } else {
       if (
         this.userService.checkUser(this.profileForm.value.email!, this.profileForm.value.password!)
       ) {
@@ -83,16 +82,21 @@ export class AdminPage {
   }
 
   /**
-   * emailControl getter
+   * getters
    */
   get emailControl() {
     return this.profileForm.get('email')!;
+  }
+
+  get passwordControl() {
+    return this.profileForm.get('password')!;
   }
 
   /**
    * Reset Form button
    */
   resetForm() {
+    this.showSuccess.set(false);
     this.profileForm.reset();
   }
 }

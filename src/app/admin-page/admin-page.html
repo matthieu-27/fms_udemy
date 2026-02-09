@@ -34,19 +34,23 @@
             formControlName="password"
           />
         </z-form-control>
-        <z-form-message zType="default"
-          >Le mot de passe doit faire minimum 4 caractères.
-        </z-form-message>
+        @if (passwordControl.hasError('required') && passwordControl.touched) {
+          <z-form-message zType="error">L'email est requis.</z-form-message>
+        } @else if (passwordControl.hasError('email') && passwordControl.touched) {
+          <z-form-message zType="error">L'email entré n'est pas valide.</z-form-message>
+        } @else {
+          <z-form-message>Le mot de passe doit faire minimum 4 caractères.</z-form-message>
+        }
       </z-form-field>
       <z-form-field>
         <z-form-control
           [errorMessage]="
-            isFieldInvalid('terms') ? 'Vous devez accepter les termes et condtions' : ''
+            isFieldInvalid('terms') ? 'Vous devez ABSOLUMENT accepter les termes et condtions' : ''
           "
           class="flex flex-col"
         >
           <div class="flex items-center space-x-2">
-            <z-checkbox id="terms" formControlName="terms" />
+            <z-checkbox id="terms" formControlName="terms" [(ngModel)]="profileForm.value.terms" />
             <label z-form-label class="mb-0!" zRequired for="terms"
               >J'accepte les termes et conditions
             </label>
@@ -55,9 +59,9 @@
       </z-form-field>
       <div class="flex gap-4">
         <button z-button zType="default" type="submit" [disabled]="profileForm.invalid">
-          Submit
+          Envoyer
         </button>
-        <button z-button zType="outline" (click)="resetForm()">Reset</button>
+        <button z-button zType="outline" (click)="resetForm()">Recommencer</button>
       </div>
     </form>
   </z-card>
