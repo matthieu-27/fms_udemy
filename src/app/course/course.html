@@ -19,24 +19,32 @@
     <ng-template #resourcesMenu>
       <div z-menu-content class="w-56 space-y-2">
         <button
-          z-button
-          zType="default"
+          z-menu-item
+          class="hover:bg-background hover:text-foreground text-center cursor-default w-full flex flex-col items-center"
+        >
+          Admin Menu
+        </button>
+        <z-divider zSpacing="sm" />
+        <button z-menu-item class="hover:text-background hover:bg-primary" (click)="create()">
+          <z-icon zType="plus" class="mr-2" />
+          Nouveau Cours
+        </button>
+
+        <button
           z-menu-item
           class="hover:text-background hover:bg-primary"
           (click)="edit(course().id)"
         >
           <z-icon zType="file-text" class="mr-2" />
-          Edit
+          Modifier
         </button>
 
         <button
-          z-button
-          zType="destructive"
           class="hover:text-background hover:bg-destructive"
           z-menu-item
-          (click)="showDialog()"
+          (click)="showDeleteDialog()"
         >
-          <z-icon zType="trash" /> Delete
+          <z-icon zType="trash" /> Supprimer
         </button>
       </div>
     </ng-template>
