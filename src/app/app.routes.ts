@@ -37,6 +37,11 @@ export const routes: Routes = [
     component: ProfilePage,
   },
   {
+    path: 'adminpage',
+    canActivate: [authGuard],
+    component: ProfilePage,
+  },
+  {
     path: '**',
     component: PageNotFound,
   },
