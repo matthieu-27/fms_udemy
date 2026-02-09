@@ -62,7 +62,6 @@ export class AdminPage {
       if (
         this.userService.checkUser(this.profileForm.value.email!, this.profileForm.value.password!)
       ) {
-        console.log(this.userService.isLoggedIn());
         toast.success('Identification réussie !', {
           description:
             "Bravo et merci d'avoir bien appuyé sur les bonnes touches dans le bon ordre",
