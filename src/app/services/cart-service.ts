@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CartItem } from '../models/cart-item.model';
 import { Course } from '../models/course.model';
@@ -6,7 +6,7 @@ import { Course } from '../models/course.model';
 @Injectable({
   providedIn: 'root',
 })
-export class CartService {
+export class CartService implements ErrorHandler {
   private items: CartItem[] = [];
   private cartItemsSubject = new BehaviorSubject<CartItem[]>([]);
   cartItems$ = this.cartItemsSubject.asObservable();
@@ -17,6 +17,12 @@ export class CartService {
     this.loadCartFromLocalStorage();
   }
 
+  handleError(error: any): void {
+    console.error('Erreur lors du chargement du panier depuis localStorage:', error);
+    this.items = [];
+    this.cartItemsSubject.next([...this.items]);
+  }
+
   // Méthode pour charger le panier depuis le localStorage
   private loadCartFromLocalStorage(): void {
     const cartData = localStorage.getItem(this.CART_STORAGE_KEY);
@@ -25,9 +31,7 @@ export class CartService {
         this.items = JSON.parse(cartData);
         this.cartItemsSubject.next([...this.items]);
       } catch (error) {
-        console.error('Erreur lors du chargement du panier depuis localStorage:', error);
-        this.items = [];
-        this.cartItemsSubject.next([...this.items]);
+        this.handleError(error);
       }
     }
   }
@@ -43,7 +47,7 @@ export class CartService {
 
   addToCart(course: Course, quantity: number = 1) {
     // Vérifier si le cours est déjà dans le panier
-    const existingItem = this.items.find(item => item.course.id === course.id);
+    const existingItem = this.items.find((item) => item.course.id === course.id);
 
     if (existingItem) {
       // Si le cours existe déjà, augmenter la quantité
@@ -52,28 +56,28 @@ export class CartService {
       // Sinon, ajouter un nouvel élément au panier
       const newItem: CartItem = {
         course: course,
-        quantity: quantity
+        quantity: quantity,
       };
       this.items.push(newItem);
     }
 
     // Notifier les observateurs que le panier a changé
     this.cartItemsSubject.next([...this.items]);
-    
+
     // Sauvegarder dans le localStorage
     this.saveCartToLocalStorage();
   }
 
   removeFromCart(cartItem: CartItem) {
     // Trouver l'index de l'élément à supprimer
-    const index = this.items.findIndex(item => item.course.id === cartItem.course.id);
+    const index = this.items.findIndex((item) => item.course.id === cartItem.course.id);
 
     if (index !== -1) {
       // Supprimer l'élément du tableau
       this.items.splice(index, 1);
       // Notifier les observateurs
       this.cartItemsSubject.next([...this.items]);
-      
+
       // Sauvegarder dans le localStorage
       this.saveCartToLocalStorage();
     }
@@ -83,19 +87,13 @@ export class CartService {
     // Vider complètement le panier
     this.items = [];
     this.cartItemsSubject.next([...this.items]);
-    
+
     // Sauvegarder dans le localStorage
     this.saveCartToLocalStorage();
   }
 
   getCartItems(): CartItem[] {
     return [...this.items];
-  }
-
-  getTotal(): number {
-    return this.items.reduce((total, item) => {
-      return total + (item.course.price * item.quantity);
-    }, 0);
   }
 
   getItemCount(): number {
