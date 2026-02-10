@@ -44,7 +44,7 @@ export class Course {
   addToCart() {
     this.cartService.addToCart(this.course());
     toast.success(`Cours ajouté au panier !`, {
-      description: `Le cours en ligne ${this.course.name} a bien été ajouté au panier`,
+      description: `Le cours en ligne ${this.course().name} a bien été ajouté au panier`,
     });
   }
 
