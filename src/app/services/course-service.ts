@@ -23,14 +23,11 @@ export class CourseService {
     return this.http.get<Course>(this.dataUrl + '/' + id);
   }
 
+  updateCourse(course: Course) {
+    return this.http.put<Course>(this.dataUrl + '/' + course.id, course);
+  }
+
   deleteCourseById(id: number) {
-    return this.http.delete<Course>(this.dataUrl + '/' + id, { observe: 'response' }).subscribe({
-      next: (res) => {
-        if (res.status === 200) {
-          return true;
-        }
-        return false;
-      },
-    });
+    return this.http.delete<Course>(this.dataUrl + '/' + id, { observe: 'response' });
   }
 }

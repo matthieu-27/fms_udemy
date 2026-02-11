@@ -1,9 +1,279 @@
-@if (isAdmin() && course()) {
-  <p>pardon monsieur</p>
+@if (isAdmin()) {
+  @if (isCreating()) {
+    <!-- Mode création de cours -->
+    <div
+      class="min-h-[calc(100vh-5rem)] w-full flex flex-col gap-4 justify-center items-center p-4"
+    >
+      <z-card class="w-full md:w-94">
+        <h2 class="text-xl font-bold mb-6">Créer un nouveau cours</h2>
+        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()" class="max-w-sm space-y-6">
+          <z-form-field>
+            <label for="course-name" z-form-label zRequired>Nom du cours</label>
+            <z-form-control>
+              <input
+                id="course-name"
+                z-input
+                type="text"
+                placeholder="Entrez le nom du cours"
+                formControlName="name"
+              />
+            </z-form-control>
+            @if (nameControl.hasError('required') && nameControl.touched) {
+              <z-form-message zType="error">Le nom du cours est requis.</z-form-message>
+            } @else if (nameControl.hasError('minlength') && nameControl.touched) {
+              <z-form-message zType="error"
+                >Le nom doit faire au moins 3 caractères.</z-form-message
+              >
+            } @else {
+              <z-form-message>Donnez un nom accrocheur à votre cours.</z-form-message>
+            }
+          </z-form-field>
+
+          <z-form-field>
+            <label for="course-description" z-form-label zRequired>Description</label>
+            <z-form-control>
+              <textarea
+                id="course-description"
+                z-input
+                placeholder="Entrez la description du cours"
+                formControlName="description"
+                rows="4"
+              ></textarea>
+            </z-form-control>
+            @if (descriptionControl.hasError('required') && descriptionControl.touched) {
+              <z-form-message zType="error">La description est requise.</z-form-message>
+            } @else if (descriptionControl.hasError('minlength') && descriptionControl.touched) {
+              <z-form-message zType="error"
+                >La description doit faire au moins 10 caractères.</z-form-message
+              >
+            } @else {
+              <z-form-message>Décrivez le contenu et les objectifs du cours.</z-form-message>
+            }
+          </z-form-field>
+
+          <z-form-field>
+            <label for="course-price" z-form-label zRequired>Prix (€)</label>
+            <z-form-control>
+              <input
+                id="course-price"
+                z-input
+                type="number"
+                placeholder="Entrez le prix"
+                formControlName="price"
+                min="0"
+                step="0.01"
+              />
+            </z-form-control>
+            @if (priceControl.hasError('required') && priceControl.touched) {
+              <z-form-message zType="error">Le prix est requis.</z-form-message>
+            } @else if (priceControl.hasError('min') && priceControl.touched) {
+              <z-form-message zType="error">Le prix doit être positif.</z-form-message>
+            } @else {
+              <z-form-message>Indiquez le prix en euros.</z-form-message>
+            }
+          </z-form-field>
+
+          <z-form-field>
+            <label for="course-category" z-form-label zRequired>Catégorie</label>
+            <z-form-control>
+              <z-select id="course-category" [(zValue)]="selectedCategory" class="w-90">
+                <z-select-item zValue="Développement Web">Développement Web</z-select-item>
+                <z-select-item zValue="Développement Mobile">Développement Mobile</z-select-item>
+                <z-select-item zValue="Data Science & IA">Data Science & IA</z-select-item>
+                <z-select-item zValue="Cloud & DevOps">Cloud & DevOps</z-select-item>
+                <z-select-item zValue="Langages de Programmation"
+                  >Langages de Programmation</z-select-item
+                >
+                <z-select-item zValue="Cybersécurité">Cybersécurité</z-select-item>
+                <z-select-item zValue="Bases de Données & Algorithmes"
+                  >Bases de Données & Algorithmes</z-select-item
+                >
+                <z-select-item zValue="Autres">Autres</z-select-item>
+              </z-select>
+            </z-form-control>
+            @if (categoryControl.hasError('required') && categoryControl.touched) {
+              <z-form-message zType="error">La catégorie est requise.</z-form-message>
+            } @else {
+              <z-form-message>Choisissez la catégorie appropriée.</z-form-message>
+            }
+          </z-form-field>
+
+          <div class="flex gap-4">
+            <button
+              z-button
+              zType="default"
+              type="submit"
+              [disabled]="courseForm.invalid || isSubmitting()"
+            >
+              @if (isSubmitting()) {
+                <span>Création en cours...</span>
+              } @else {
+                <span>Créer le cours</span>
+              }
+            </button>
+            <button z-button zType="outline" (click)="router.navigate(['/courses'])">
+              Annuler
+            </button>
+          </div>
+        </form>
+      </z-card>
+    </div>
+  } @else if (isEditing()) {
+    <!-- Mode modification de cours -->
+    <div
+      class="min-h-[calc(100vh-5rem)] w-full flex flex-col gap-4 justify-center items-center p-4"
+    >
+      <z-card class="w-full md:w-94">
+        <h2 class="text-xl font-bold mb-6">Modifier le cours</h2>
+        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()" class="max-w-sm space-y-6">
+          <z-form-field>
+            <label for="course-name" z-form-label zRequired>Nom du cours</label>
+            <z-form-control>
+              <input
+                id="course-name"
+                z-input
+                type="text"
+                placeholder="Entrez le nom du cours"
+                formControlName="name"
+              />
+            </z-form-control>
+            @if (nameControl.hasError('required') && nameControl.touched) {
+              <z-form-message zType="error">Le nom du cours est requis.</z-form-message>
+            } @else if (nameControl.hasError('minlength') && nameControl.touched) {
+              <z-form-message zType="error"
+                >Le nom doit faire au moins 3 caractères.</z-form-message
+              >
+            } @else {
+              <z-form-message>Donnez un nom accrocheur à votre cours.</z-form-message>
+            }
+          </z-form-field>
+
+          <z-form-field>
+            <label for="course-description" z-form-label zRequired>Description</label>
+            <z-form-control>
+              <textarea
+                id="course-description"
+                z-input
+                placeholder="Entrez la description du cours"
+                formControlName="description"
+                rows="4"
+              ></textarea>
+            </z-form-control>
+            @if (descriptionControl.hasError('required') && descriptionControl.touched) {
+              <z-form-message zType="error">La description est requise.</z-form-message>
+            } @else if (descriptionControl.hasError('minlength') && descriptionControl.touched) {
+              <z-form-message zType="error"
+                >La description doit faire au moins 10 caractères.</z-form-message
+              >
+            } @else {
+              <z-form-message>Décrivez le contenu et les objectifs du cours.</z-form-message>
+            }
+          </z-form-field>
+
+          <z-form-field>
+            <label for="course-price" z-form-label zRequired>Prix (€)</label>
+            <z-form-control>
+              <input
+                id="course-price"
+                z-input
+                type="number"
+                placeholder="Entrez le prix"
+                formControlName="price"
+                min="0"
+                step="0.01"
+              />
+            </z-form-control>
+            @if (priceControl.hasError('required') && priceControl.touched) {
+              <z-form-message zType="error">Le prix est requis.</z-form-message>
+            } @else if (priceControl.hasError('min') && priceControl.touched) {
+              <z-form-message zType="error">Le prix doit être positif.</z-form-message>
+            } @else {
+              <z-form-message>Indiquez le prix en euros.</z-form-message>
+            }
+          </z-form-field>
+
+          <z-form-field>
+            <label for="course-category" z-form-label zRequired>Catégorie</label>
+            <z-form-control>
+              <z-select id="course-category" [(zValue)]="selectedCategory" class="w-90">
+                <z-select-item zValue="Développement Web">Développement Web</z-select-item>
+                <z-select-item zValue="Développement Mobile">Développement Mobile</z-select-item>
+                <z-select-item zValue="Data Science & IA">Data Science & IA</z-select-item>
+                <z-select-item zValue="Cloud & DevOps">Cloud & DevOps</z-select-item>
+                <z-select-item zValue="Langages de Programmation"
+                  >Langages de Programmation</z-select-item
+                >
+                <z-select-item zValue="Cybersécurité">Cybersécurité</z-select-item>
+                <z-select-item zValue="Bases de Données & Algorithmes"
+                  >Bases de Données & Algorithmes</z-select-item
+                >
+                <z-select-item zValue="Autres">Autres</z-select-item>
+              </z-select>
+            </z-form-control>
+            @if (categoryControl.hasError('required') && categoryControl.touched) {
+              <z-form-message zType="error">La catégorie est requise.</z-form-message>
+            } @else {
+              <z-form-message>Choisissez la catégorie appropriée.</z-form-message>
+            }
+          </z-form-field>
+
+          <div class="flex gap-4">
+            <button
+              z-button
+              zType="default"
+              type="submit"
+              [disabled]="courseForm.invalid || isSubmitting()"
+            >
+              @if (isSubmitting()) {
+                <span>Mise à jour en cours...</span>
+              } @else {
+                <span>Mettre à jour le cours</span>
+              }
+            </button>
+            <button z-button zType="outline" (click)="toggleEdit()">Annuler</button>
+          </div>
+        </form>
+      </z-card>
+    </div>
+  } @else {
+    <!-- Mode affichage des détails du cours -->
+    <div
+      class="min-h-[calc(100vh-5rem)] w-full flex flex-col gap-4 justify-center items-center p-4"
+    >
+      <z-card class="w-full md:w-94">
+        <div class="space-y-4">
+          <h2 class="text-xl font-bold">Détails du cours</h2>
+          <div class="space-y-2">
+            <p><strong>Nom:</strong> {{ course()?.name }}</p>
+            <p><strong>Description:</strong> {{ course()?.description }}</p>
+            <p><strong>Prix:</strong> {{ course()?.price }} €</p>
+            <p><strong>Catégorie:</strong> {{ course()?.category }}</p>
+          </div>
+          <div class="flex gap-4 mt-6">
+            <button z-button zType="default" (click)="toggleEdit()">
+              <z-icon zType="file-text" class="mr-2" />
+              Modifier ce cours
+            </button>
+            <button z-button zType="outline" (click)="router.navigate(['/courses'])">
+              Retour à la liste
+            </button>
+          </div>
+        </div>
+      </z-card>
+    </div>
+  }
 } @else if (isAdmin() && !course()) {
-  <p>oui c'est pour ?</p>
+  <div class="min-h-[calc(100vh-5rem)] w-full flex flex-col gap-4 justify-center items-center p-4">
+    <z-card class="w-full md:w-94">
+      <p class="text-center p-6">Cours non trouvé ou en cours de chargement...</p>
+    </z-card>
+  </div>
 } @else {
-  <div class="max-w-7xl mx-auto">
-    Désolé, vous n'avez pas accès au fonctionnalités administrateur.
+  <div class="max-w-7xl mx-auto p-4">
+    <z-card>
+      <p class="p-6 text-center">
+        Désolé, vous n'avez pas accès aux fonctionnalités administrateur.
+      </p>
+    </z-card>
   </div>
 }

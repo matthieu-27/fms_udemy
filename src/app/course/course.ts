@@ -78,13 +78,21 @@ export class Course {
   }
 
   deleteCourseById() {
-    if (this.courseService.deleteCourseById(this.course().id)) {
-      toast.success('Cours Supprimé avec succès', {
-        description: `${this.course().name}: ${this.course().description} n'existe plus sur nos serveurs`,
-      });
-      this.router.navigateByUrl('courses');
-    } else {
-      toast.error('Un problème est arrivé');
-    }
+    this.courseService.deleteCourseById(this.course().id).subscribe({
+      next: (res) => {
+        if (res.status === 200) {
+          toast.success('Cours Supprimé avec succès', {
+            description: `${this.course().name}: ${this.course().description} n'existe plus sur nos serveurs`,
+          });
+          this.router.navigateByUrl('courses');
+        } else {
+          toast.error('Un problème est arrivé lors de la suppression');
+        }
+      },
+      error: (err) => {
+        toast.error('Un problème est arrivé');
+        console.error('Error deleting course:', err);
+      },
+    });
   }
 }
